@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <!-- enlaces fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h3 a{
+            text-decoration: none;
+            color: #2D3E5B;
+        }
+        .contactos{
+            padding: 40px 70px 0 70px;
+        }
+        .contactos h1 {
+            margin-bottom: 30px; /* Margen inferior para el primer título */
+        }
+        h2{
+            color: #2D3E5B;
+            font-size: 1em;
+            padding-bottom: 10px;
+        }
+        h2 .primero{
+            padding: 40px 0 10px 0;
+        }
+        h1 {
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+        span{
+            color:  #2D3E5B;
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1.5em;
+        }
+        
+     /*--------------- animar el letsgo */
+        .rectangulo{
+            display: block;
+            height: 40px;
+            background-image:url(../trabajo_final/limones.JPG);
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative; 
+        }
+        .rectangulo h3 {
+            position: absolute; /* Añade posición absoluta para mover el texto */
+            top: 5px; 
+            left: 100%; 
+            animation: letsgo 30s linear infinite;
+            color: #e89715; 
+        }
+        @keyframes letsgo {
+            0% {
+                left: 100%; /* Posición inicial del texto */
+            }
+            100% {
+                left: -100%; /* Posición final del texto */
+            }
+        }
+        
+        /*--------------- estilizar formulario */
+        label{
+            font-family: "Spectral", serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 1em;
+            text-transform: capitalize;
+        }
+        form{
+            padding: 30px 70px 30px 70px;
+            color: #2D3E5B;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .campos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre los campos */
+        }
+        .campo {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 calc(50% - 20px); /*mismo ancho*/
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        input[type="mensaje"] {
+            padding: 10px;
+            border: 1px solid #2D3E5B;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2D3E5B;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: white;
+            color:  #2D3E5B;
+            border: 1px solid #2D3E5B;
+        }
+        form h2{
+            font-family: "Spectral", serif;
+            font-weight: 500;
+            font-style: normal;
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3><a href="../trabajo_final/index.html">imms</a></h3>
+        <ul>
+            <li><a href="../trabajo_final/trabajos.html">trabajos</a></li>
+            <li><a href="../trabajo_final/sobre-mi.html">sobre mí</a></li>
+            <li><a href="../trabajo_final/contacto.html">contacto</a></li>
+        </ul>
+    </header>
+    <hr> <!--linea de separación-->
+    <div class="contactos">
+        <h1>¿Preparado para empezar? 
+           <br><span>¡Hablemos! </span>
+        </h1>
+        <div class="rectangulo"><h3>Let´s go</h3></div>
+        <h2 class="primero">inmamolinams@gmail.com</h2>
+        <h2>+34 617684900</h2>
+    </div>
+
+    <!--formulario-->
+    <form action="">
+        <h2>formulario</h2>
+        <div class="campos">
+            <div class="campo">
+                <label for="nombre">nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="">
+            </div>
+            <div class="campo">
+                <label for="apellido">apellido:</label>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div class="campo">
+                <label for="email">email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="campo">
+                <label for="mensaje">mensaje:</label>
+                <input type="text" id="mensaje" name="mensaje">
+            </div>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

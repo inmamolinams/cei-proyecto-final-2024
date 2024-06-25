@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <!-- enlace para incluir iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- enlaces fuentes -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h3 a{
+            text-decoration: none;
+            color:#2D3E5B;
+        }
+        h1{
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+        span{
+            text-transform: uppercase;
+            color:  #DB9291;
+            font-family: "Spectral", serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 1em;
+            padding-bottom: 20px;
+        }
+        .contenedor{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 70px;
+        }
+        .contenedor-izquierda{
+            width: 50%;
+            flex: 2;
+            overflow: hidden;
+        }
+        .contenedor-derecha{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex: 1;
+        }
+        .imagen{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-image: url(../trabajo_final/imagenes/monigote.png);
+            background-size: cover; /* Ajustar la imagen en el contenedor */
+        }
+        .boton{
+            height: 40px;
+            width: 150px;
+            border: 1px solid #2D3E5B;;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-transform: capitalize;
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1em;
+        }
+        .boton:hover{
+            background-color: #2D3E5B;
+            border: 1px solid #2D3E5B;
+        }
+        .boton a:hover{
+            color:white
+        }
+        .iconos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-top: 20px;
+        }
+        .circulo {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #2D3E5B;
+            border-radius: 50%;
+            background-color: #2D3E5B;
+        }
+        .circulo a{
+            color: white;
+        }
+        .circulo:hover {
+            background-color: white;
+            color: #2D3E5B;
+        }
+        .circulo:hover a {
+            color: #2D3E5B;
+        }
+        p{
+            font-family: "Spectral", serif;
+            font-weight: 300;
+            font-style: normal;
+            padding-bottom: 20px;
+        }
+
+        /*--------------- animaciones de todos los 'p' */
+
+        .contenedor-izquierda p {
+            opacity: 0;
+            transform: translateY(50px); /* Comienza 50px abajo */
+            transition: all 0.5s ease; /* Suaviza la transición */
+        }
+        .contenedor-izquierda p.animate {
+            opacity: 1;
+            transform: translateY(0); /* Se mueve a su posición final */
+        }
+
+        /*--------------- animaciones del útlimo 'p'
+
+        .ultimo-p {
+            position: relative;
+            animation: recorrerP 30s linear infinite; /* Animación de 30 segundos, lineal y repetida 
+        }
+        @keyframes recorrerP {
+            from {
+                left: 100%; /* Comienza fuera del borde derecho 
+            }
+            to {
+                left: -100%; /* Termina fuera del borde izquierdo 
+            }
+        } */
+     </style>
+</head>
+<body>
+    <header>
+        <h3><a href="../trabajo_final/index.html">imms</a></h3>
+        <ul>
+            <li><a href="../trabajo_final/trabajos.html">trabajos</a></li>
+            <li><a href="../trabajo_final/sobre-mi.html">sobre mí</a></li>
+            <li><a href="../trabajo_final/contacto.html">contacto</a></li>
+        </ul>
+    </header>
+    <hr> <!--linea de separación-->
+    <div class="contenedor">
+       <div class="contenedor-derecha">
+            <div class="imagen"></div>
+            <div class="boton"><a href=#>descargar CV</a></div>
+            <div class="iconos">
+                <div class="circulo"><a href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a></div>
+                <div class="circulo"><a href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a></div>
+                <div class="circulo"><a href="#"><i class="fab fa-instagram"></i></a></div>
+            </div>
+        </div>
+        <div class="contenedor-izquierda">
+            <h1>inma molina 
+                <br> martín-sacristán</h1>
+            <p>Soy diseñadora Web, gráfica y UX/UI en España. Mi enfoque principal es como diseñadora UX/UI, aunque también tengo una gran pasión por los proyectos de branding y creación</p>
+            <p>Se dedico a desarrollar soluciones de diseño escalables, inclusivas y altamente funcionales, combinando creatividad y atención al detalle para ofrecer experiencias digitales excepcionales..</p> 
+            <p><span>Cualidades personales:</span>
+
+                <br> 1. Pensamiento creativo e innovador con agudo sentido estético.
+                <br> 2. Capacidad para comunicar de manera clara y efectiva los conceptos de diseño.
+                <br> 3. Participación activa y efectiva en equipos multidisciplinarios.
+                <br> 4. Entusiasmo y capacidad para mantenerse al día con las últimas tecnliogías y tendencias de diseño
+            </p>
+           <p><span>Herramientas:</span>
+
+                <br> 1. Dominio de Figma | Figjam | Miro | Framer | Adobe.
+                <br> 2. Experiencia en aplicaciones complementarias como Tome | Whimsical | Maze | Zeroheight entre otras.
+                <br> 3. Profundo conocimiento en herramientas de diseño web como HTML, CSS y JavaScript.
+                <br> 4. Documentación y gestión de proyectos en Notion.
+            </p> 
+            <p class="ultimo-p"><span>¡Para obtener más detalles, no te pierdas mi CV!</span></p>
+        </div>
+    </div>
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const p = document.querySelectorAll('.contenedor-izquierda p');
+        p.forEach((p, i) => {
+             setTimeout(() => {
+                p.classList.add('animate');
+            }, i * 200); // Añade un pequeño retraso entre cada párrafo
+        });
+    });
+
+    </script>
+</body>
+</html>
