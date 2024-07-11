@@ -3,21 +3,23 @@
     margin: 0;
     box-sizing: border-box;
 }
-/*body{
-    background-color: rgb(253, 253, 246);
-}*/
+body{
+    background-color: #F7F7F6;
+}
 /*-------------- navegación */ 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding:0 40px;
+    height: 80px; /* Altura fija para que al hacer responsive se quede siempre */
+    position: relative; /* Asegura que el contenido dentro se posicione adecuadamente */
 }
 h3{
     text-transform: uppercase;
     padding-left: 15px;
 }
+/* Alinear la navegación */
 header ul{
     display: flex;
     justify-content: center;
@@ -35,57 +37,124 @@ ul li a{
     color:  #2D3E5B;
 }
 header ul li a:hover{
-    color:  #DB9291;
+    color: #FFC200;
 }
 hr { /*linea negra*/
     border: none;
     height: 1px;
     background-color:  #2D3E5B;
 }
+/*-------------- navegación responsive - menu bocadillo */ 
+.abrir, .cerrar{
+    appearance: none;
+    -webkit-appearance: none; /*para segurarse que en los iphone antiguos se vea el botón*/
+    display: none; /* para que el botón no sea visible en versión desktop*/
+}
+@media screen and (max-width:800px){ /*para hacerlo versión movil*/
+    /*trasformar el nav en un botón desplegable*/ 
+    nav{
+        background-color:#FFC200;
+        position: fixed; /*romper el flijo normal y tape todo*/
+        width: calc(100% - 40px); /*ocupe todo alto*/
+        height: calc(100% - 40px); /*ocupe todo alto*/
+        top: -100vh; /* para esconderlo y que no se vea hasta que lo despliegen*/
+        left: 0;
+        padding: 20px; /* se separan del lateral izquierdo*/
+        transition: top 0.8s;
+        z-index: 1000; 
+    } 
+    nav ul{
+        /*poner las cosas una debajo de la otra */
+        display: block; /*cambia en valor de todo flex y es util cuando hay muchas propiedades*/
+    }
+    nav ul li a:hover { /*para cuando esta desplegado*/
+        color: #F7F7F6;
+        text-decoration: underline;
+    }
+    .desplegado{
+        top: 0; /* para que se vea cuando se despliege*/
+    }
+    nav li:not(:last-child){ /*para desactivar separa la nav*/
+        margin-right: 0px;
+     }
+    nav li:not(:first-child){
+        margin-top: 20px;
+    }
+    nav a{
+        font-size: 1.5em;
+        color: #F7F7F6;
+    }
+    ul li a:hover{
+        color: #FFC200;
+    }
+    .cerrar{
+        display: block; /*para que el botón se vea (los botones son elementos inline pero quiero utilizarlo como bloque*/
+        border: none;
+        background-color: transparent;
+        color: #F7F7F6;
+        font-size: 1em;
+        cursor: pointer; /*para cuando poner el ratón encima de la cruz que salga el ratón*/
+        position: absolute; /*para situarlo*/
+        top: 20px;
+        right: 20px;
+    }
+    .abrir{
+        display: block;
+        background-color: transparent;
+        border: 1px solid #FFC200;
+        border-radius: 5px;
+        padding: 5px 5px 0;
+        width: 30px;
+    }
+    .abrir span{
+        display: block; /*son elementos en linea y quiero que sean cajitas*/
+        background-color: #FFC200;
+        height: 2px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+ }
 /*--------------- cabecera */
-.presentacion{
+.presentacion {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 70px;
 }
-.tex-derecha, .tex-izquierda{
+.tex-derecha, .tex-izquierda {
     width: 50%;
 }
-.tex-derecha{
+.tex-derecha {
     text-transform: uppercase;
 }
 h1, h3 {
     font-family: "Spectral", serif;
     font-weight: 500;
-    font-style: normal;
-    color:  #2D3E5B;
+    color: #2D3E5B;
 }
-h1{
+h1 {
     font-size: 2.5em;
 }
-p{
+p {
     font-family: "Spectral", serif;
     font-weight: 300;
-    font-style: normal;
     padding-bottom: 20px;
-    color:  #2D3E5B;
+    color: #2D3E5B;
 }
-.tex-derecha h2{
-    color:  #2D3E5B;
+.tex-derecha h2 {
+    color: #2D3E5B;
     font-family: "Lato", sans-serif;
     font-weight: 300;
-    font-style: normal;
     font-size: 1em;
 }
-.contenedor-circulos{
+.contenedor-circulos {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-top: 5px;
     gap: 8px; /* Espacio entre los círculos */
 }
-.circulo{
+.circulo {
     height: 20px;
     width: 80px;
     border: 1px solid #2D3E5B;
@@ -93,244 +162,203 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     text-transform: capitalize;
-}
-.circulo a{
-    text-decoration: none;
     color: #2D3E5B;
     cursor: pointer;
     font-family: "Lato", sans-serif;
     font-weight: 300;
-    font-style: normal;
     font-size: 0.8em;
 }
-.presentacion .circulo:hover{
-    border: 1px solid #DB9291;
+.presentacion .circulo:hover {
+    border: 1px solid #FFC200;
+    color: #FFC200;
 }
-.presentacion .circulo a:hover{
-    color: #DB9291;
-}
-/*--------------- imagenes */
-.imagenes{
+/*--------------- conjunto de imagenes */
+.imagenes {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 5px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding: 0 40px;
 }
-.contenedor-dos-tres,
-.contenedor-cuatro-cinco{
+.contenedor-uno,
+.contenedor-dos {
     display: flex;
     width: 95%;
     gap: 5px;
 }
-.imagen-uno{
+.imagenUno, 
+.imagenDos,
+.imagenTres,
+.imagenCuatro {
     height: 70px;
-    width: 95%;
     border: 1px solid transparent;
     border-radius: 20px;
-    background-image: url(../imagenes/limones.JPG);
 }
-.imagen-dos, 
-.imagen-cinco{
-    height: 70px;
+.imagenUno, 
+.imagenCuatro {
     width: 30%;
-    border: 1px solid transparent;
-    border-radius: 20px;
     background-image: url(../imagenes/dib.limones.JPG);
     background-size: cover;
 }
-.imagen-dos{
+.imagenUno {
     background-position: center;
 }
-.imagen-tres,
-.imagen-cuatro{
-    height: 70px;
+.imagenDos,
+.imagenTres {
     width: 70%;
-    border: 1px solid transparent;
-    border-radius: 20px;
-    background-image: url(../imagenes/ventana.JPG);
+    background-image: url(../imagenes/Fondo1.JPG);
     background-position: top;
 }
-.imagen-cuatro{
-    background-image: url(../imagenes/limones.JPG);
+.imagenTres {
+    background-image: url(../imagenes/Fondo2.JPG);
 }
+
 /*--------------- categorías */
-.categorias{
+.categorias {
     display: block;
     text-transform: capitalize;
     padding: 60px;
-    color:  #2D3E5B;
+    color: #2D3E5B;
 }
-ul li{
-    padding: 15px;  
+ul li {
+    padding: 15px;
     font-family: "Lato", sans-serif;
     font-weight: 300;
-    font-style: normal;
     font-size: 1em;
 }
-ul a{
+ul a {
     list-style: none;
-    text-decoration: none; 
+    text-decoration: none;
 }
-ul a:hover{
-    color:  #DB9291;
+ul a:hover {
+    color: #FFC200;
 }
-h4{
+h4 {
     padding-bottom: 20px;
 }
-h4 i{
-    margin-right: 10px; 
+h4 i {
+    margin-right: 10px;
 }
 /*--------------- case-study */
-.case-study{
+.case-study {
     display: block;
     text-transform: capitalize;
-    padding-right: 60px;
-    padding-left: 60px;
-    color:  #2D3E5B;
+    padding: 0 60px 70px;
+    color: #2D3E5B;
 }
-.case-study h4{
-    padding-bottom: 60px;  
+.case-study h4 {
+    padding-bottom: 60px;
 }
 a {
-    text-decoration: none; /* Quitamos subrayado predeterminado */
-    color: inherit; /* Heredamos el color del texto del padre */
+    text-decoration: none;
+    color: inherit;
 }
-.conjunto-cuadrados{
+.conjunto-cuadrados {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 30px;
 }
 .cuadrado-uno,
-.cuadrado{  
-    width: 400px;
-    height: 400px;
+.cuadrado-dos {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
     border-radius: 20px;
-    background-image: url(../imagenes/ventana.JPG);
-    background-size: cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    transition: filter 0.3s ease;
     cursor: pointer;
-    transition: filter 0.3s ease; /* Añade una transición para un efecto suave */
 }
-.cuadrado-uno{
-    background-image: url(../imagenes/daybyday.png);
+.cuadrado-uno {
+    background-image: url(../imagenes/dunas-fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.cuadrado-dos {
+    background-image: url(../imagenes/acesibilidad-fondo.png); 
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .cuadrado-uno:hover,
-.cuadrado:hover{
-    filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
+.cuadrado-dos:hover {
+    filter: brightness(50%);
 }
-h5{
-    padding-top: 260px;
-    padding-bottom: 10px;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1em;
-}
-.circulo{
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+h5 {
+    padding-top: 0;
+    padding-bottom: 5px;
     font-size: 0.8em;
+    font-family: "Lato", sans-serif;
 }
-.boton{
-    display: block;
-    border: 1px solid #2D3E5B;
+.circulos {
+    font-size: 0.6em;
+    width: 70px;
+    border: 0.8px solid #2D3E5B;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    padding: 10px;
-    margin-top: 35px;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1em;
-}
-.boton a{
-    color: #2D3E5B;
-    text-decoration: none;
-}
-.boton a i {
-    margin-left: 10px; /* Espacio entre el texto y el icono */
-}
-.boton a:hover{
-    color:  #DB9291;
-}
-.boton:hover{
-    border: 1px dashed #DB9291;
-}
-/*--------------- diseño-web */
-.diseño-web{
-    display: block;
-    text-transform: capitalize;
-    padding: 60px;
-    color: #2D3E5B
-}
-.contenedor-principal{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding-bottom: 20px;
+    text-transform: capitalize;
+    color: #2D3E5B;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
 }
-.contenedor{
-    padding-top: 40px;
+/*--------------- Solo se ve en responsive movil */
+.contenedor-movil{
+    display: none; /* Ocultar por defecto */
 }
-.contenedor h4{
-    padding-bottom: 0px;
+.contenedorUno,
+.contenedorDos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 30px ;
 }
-.contenedor-cuadrado{
-    width: 200px;
-    height: 200px;
-    border-radius: 20%;
-    background-image: url(../imagenes/ventana.JPG);
+.contenedorImg1,
+.contenedorImg2{
+    width: 150px;
+    height: 150px;
+    background-image: url(../imagenes/dunas-fondo-responsive.png);
     background-size: cover;
-    transition: filter 0.3s ease; /* Añade una transición para un efecto suave */
+    background-position: center;
+    border-radius: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
-.contenedor-cuadrado:hover{
-    filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
+.contenedorImg2{
+    background-image: url(../imagenes/Accesibilidad-fondo-mv.png);
+    background-size: 110%;
 }
 .textos{
-    padding-top: 10px;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1em;
-}
-h6, .textos h4{
-    margin: 5px 0; 
+
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 0.8em;
+    text-align: start;
 }
-
 .textos h4{
-    font-weight: bold;
-    font-size: 1em;
+    margin-top: 10px;
+    font-family: "Lato", sans-serif;
+    font-size: 0.8em;
+    font-weight: bold; 
 }
 .textos a{
     text-decoration: none;
     color: #2D3E5B;
     font-family: "Lato", sans-serif;
-    font-weight: 300;
     font-style: italic;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 .textos a:hover{
-    color:  #DB9291;
+    color:  #FFC200;
 }
 /*--------------- footer */
 footer{
@@ -338,28 +366,39 @@ footer{
     justify-content: center;
     padding-bottom: 50px;
 }
-.rectangulo{
+.footer{
     width: 90%;
-    height: 500px;
-    background-color: #2D3E5B;
+    height: 400px;
+    background-image:url(../imagenes/fondo1.JPG);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
     border-radius: 3%;
+    flex-direction: column;
+}
+.inicio-footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.final-footer{
+    display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 10px;
 }
 h2{
-    color: white;
+    color: #2D3E5B;
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 2em;
 }
 .boton-contacto{
-    border: 1px solid white;
+    border: 1.5px solid #2D3E5B;
+    background-color: transparent;
     border-radius: 20px;
-    color: white;
+    color: #2D3E5B;
     width: 200px;
     height: 30px;
     display: flex;
@@ -375,8 +414,8 @@ h2{
     margin-left: 10px;
 }
 .boton-contacto:hover{
-    background-color: white;
-    color:#2D3E5B;
+    background-color:#2D3E5B;
+    color:white;
 }
 .boton-contacto i:hover{
     color:#2D3E5B;
@@ -388,11 +427,167 @@ h2{
     gap: 20px;
     margin-top: 70px;
 }
-.ultima-linea-footer h6, 
-.rectangulo h6{
-    color: white;
+h6 {
+    color: #2D3E5B;
+    font-size: 0.8em;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
 }
-.ultima-linea-footer h6 a{
-    text-decoration: none;
-    color: white;
+
+/*--------------- Animación: para que entre poco a poco */
+.animar {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*--------------- Responsive tablet */
+@media (max-width: 992px) {
+    h1{
+        font-size: 1.7em;
+    }
+    p, h2{
+        font-size: 0.8em;
+    }
+       .contenedor-circulos{
+        gap: 5px;
+        font-size: 1em;
+    }
+    .circulo{ 
+        height: 18px;
+        width: 70px;
+        border: 0.9px solid #2D3E5B;
+    }
+    .presentacion .circulo:hover {
+        border: 0.9px solid #FFC200;
+        color:#FFC200;
+    }  
+    .imagenes {
+        padding: 0 20px;
+    }
+    .categorias,
+    .case-study,
+    .diseño-web,
+    .contacto {
+        padding: 40px;
+    }
+    h4{
+        font-size: 0.9em;
+    }
+    .categorias ul li{
+        font-size: 0.8em;
+    }
+    .cuadrado-uno,
+    .cuadrado-dos {
+        width: 200px;
+        height: 200px;
+    }
+    .circulos{
+        width: 50px;
+        font-size: 0.5em;
+    }
+    .footer{
+        width: 90%;
+        height: 300px;
+    }
+    .boton-contacto{
+        font-size: 0.8em;
+        width: 100px;
+        height: 25px;
+        border: 0.7px solid #2D3E5B;
+    }
+    h6{
+        font-size: 0.7em;
+    }
+}
+/*--------------- Responsive mv */
+@media (max-width: 768px) {
+    header {
+        padding: 0 40px;
+    }
+    .presentacion{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .tex-derecha,
+    .tex-izquierda {
+        width: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    /* justificar los p*/
+    .tex-izquierda p, .tex-derecha p {
+        text-align: justify;
+    }
+    .tex-izquierda{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .presentacion h1 {
+        font-size: 1.7em;
+    }
+    .contenedor-circulos{
+        gap: 5px;
+        font-size: 0.8em;
+    }
+    .circulo{
+        height: 15px;
+        width: 60px;
+        border: 0.8px solid #2D3E5B;
+    }
+    .imagenes {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    h4, .case-study h4{
+        padding-bottom: 10px;
+    }
+    .conjunto-cuadrados{
+        margin-top: 10px;
+    }
+    .cuadrado-uno,
+    .cuadrado-dos {
+        display: none;
+    }
+    .circulos{
+        width: 35px;
+        padding-bottom: 2px;
+    }
+    .categorias,
+    .case-study,
+    .diseño-web,
+    .contacto {
+        padding: 20px 40px;;
+    }
+    .contenedor-movil{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 20px;
+    }
+    .textos h4{
+        padding-bottom: 0; 
+    }
+    .contenedor-cuadrado {
+        width: 100px;
+        height: 100px;
+    }
+    .footer{
+        height: 200px;
+    }
+    .boton-contacto{
+        font-size: 0.7em;
+        background-color: #2D3E5B;
+        color: white;
+      
+    }
 }

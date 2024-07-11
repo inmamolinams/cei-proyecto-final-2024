@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="JS/index.js"></script>
     <!-- enlaces fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +52,7 @@
         .rectangulo{
             display: block;
             height: 40px;
-            background-image:url(../trabajo_final/limones.JPG);
+            background-image:url(../cei-proyecto-final-2024/imagenes/limones.JPG);
             margin-bottom: 30px;
             overflow: hidden;
             position: relative; 
@@ -133,15 +134,25 @@
     </style>
 </head>
 <body>
+    <!--navegación-->
     <header>
-        <h3><a href="../trabajo_final/index.html">imms</a></h3>
-        <ul>
-            <li><a href="../trabajo_final/trabajos.html">trabajos</a></li>
-            <li><a href="../trabajo_final/sobre-mi.html">sobre mí</a></li>
-            <li><a href="../trabajo_final/contacto.html">contacto</a></li>
-        </ul>
+        <h3><a href="../cei-proyecto-final-2024/index.html">imms</a></h3>
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">x</button>
+            <ul>
+                <li><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></li>
+                <li><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></li>
+                <li><a href="../cei-proyecto-final-2024/contacto.html">contacto</a></li>
+            </ul>
+        </nav>
     </header>
     <hr> <!--linea de separación-->
+
     <div class="contactos">
         <h1>¿Preparado para empezar? 
            <br><span>¡Hablemos! </span>

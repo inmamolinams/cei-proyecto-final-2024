@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="JS/daybyday.js"></script>
+    <script defer src="JS/index.js"></script>
+    <!-- enlace para incluir iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- enlaces fuentes -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /*-------------- navegación */ 
+        h3 a{
+            text-decoration: none;
+            color:#2D3E5B;
+        }
+        /*-------------- textos | cabecera */ 
+        .textos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 70px 30px 70px;
+            gap: 70px;
+        }
+        .texto-derecha {
+            width: 50%;
+        }
+        .texto-izquierda{
+            width: 30%;
+        }
+        span{
+            text-transform: capitalize;
+            font-weight: bold;
+            color:#2D3E5B;
+        }
+        p{
+            font-size: 0.8em;
+            padding-bottom: 5px;
+        }
+        hr{
+            margin-bottom: 5px;
+        }
+        /*-------------- contenido */ 
+        .contenido{
+            padding: 0 70px 30px 70px;
+            max-width: 100%; /* La imagen no será más grande que el ancho del contenedor */
+            }
+        .contenido h1{
+            font-family: "Lato", sans-serif;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+        .contenido h2{
+            color: #2D3E5B;
+            font-family: "Lato", sans-serif;
+            font-size: 0.8em;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 20px 0 20px 0;
+        }
+        button {
+            border-radius: 5px;
+            border: 1px solid #C7D0ED;
+            color: #1A2C5B;
+            background-color: white;
+            font-family: "Lato", sans-serif;
+            padding: 10px 20px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            text-decoration-line: underline;
+        }
+        .centrarBoton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /*-------------- Sistema de Diseño  NUEVOOOOO*/ 
+        .sistemaDiseno{
+            padding: 0 70px 30px 70px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .colores{
+            width: 80px;
+            height: 80px;
+            border: 1px solid transparent;
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 10px 0;
+            font-family: "Lato", sans-serif;
+            font-size: 0.8em;
+        }
+        .colores:first-child{
+            color: #B0B9D2;
+            background-color: #EEEEEE;
+        }
+        .colores:nth-child(2){
+            color: white;
+            background-color: #B0B9D2;
+        }
+        .colores:nth-child(3){
+            color: #B0B9D2;
+            background-color: #1A2C5B;
+        }
+        .colores:last-child{
+            color: white;
+            background-color: #780F48;
+        }
+        /*-------------- tipografía  NUEVOOOOO*/ 
+        .tipografia{
+            padding: 0 70px 30px 70px;
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        /*-------------- Galeria */
+        .galeria{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0 40px 0;
+        }
+        .galeria a {
+            display: inline-block;
+        }
+        .galeria img {
+            display: block; /* Para asegurar que la imagen se muestre correctamente */
+            max-width: 100%; /* La imagen no será más ancha que su contenedor */
+            max-height: 200px; /* Aumentado el tamaño máximo de altura */
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.visible {
+            display: flex;
+        }
+        .modal button {
+            display: block;
+            -webkit-appearance: none;
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .contenedor-img {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contenedor-img img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        /*-------------- iconos */
+        .iconos{
+            padding: 0 70px 80px 70px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .iconos a{
+            color:#FFC200;
+        }
+        .iconos a:hover{
+            color: #2D3E5B;
+        }
+         /*-------------- Accesibilidad fin */
+         .fin{
+            height: 300px;
+            padding: 0 70px 80px 70px;
+            background-image: url(../cei-proyecto-final-2024/imagenes/DQ-fin.png); 
+            background-position: center;
+            background-size: cover; /* La imagen cubrirá todo el contenedor */
+            background-repeat: no-repeat;
+            margin-top: 20px;
+         }
+     </style>
+</head>
+<body>
+    <!--navegación-->
+    <header>
+        <h3><a href="../cei-proyecto-final-2024/index.html">imms</a></h3>
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">x</button>
+            <ul>
+                <li><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></li>
+                <li><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></li>
+                <li><a href="../cei-proyecto-final-2024/contacto.html">contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr> <!--linea de separación-->
+    
+    <!--Bloque 1: presentación del proyecto-->
+    <div class="textos">
+        <div class="texto-derecha">
+            <h1>Desing Quest</h1>
+            <p>En un mercado laboral competitivo, los estudiantes de diseño enfrentan grandes desafíos para ingresar al ámbito profesional. Por ello, desarrollamos Design Quest, una solución innovadora que facilita la transición mediante una plataforma interactiva y dinámica.</p>
+            <p>A través de la gamificación, los participantes mejoran sus habilidades y adquieren nuevos conocimientos de manera estimulante y divertida. Cada desafío superado los acerca a sus metas personales y profesionales.</p>
+        </div>
+        <div class="texto-izquierda">
+            <p><span>roll</span> Diseñador UX/UI</p>
+            <hr>
+            <p><span>herramientas</span> Figma | FigJam | Whimsical | Maze | Zeroheight | Google Form</p>
+            <hr> 
+            <p><span>habilidades</span> Design Thinking | UX Research | UI Design </p>
+            <hr>
+        </div>
+    </div>
+    <!--Bloque 2: desarrollo del proyecto-->
+    <section class="contenido">
+        <!--Bloque Research-->
+            <h1>Research</h1>
+            <p>Durante la fase de Research, iniciamos con un exhaustivo Desk Research para comprender las percepciones de los usuarios sobre el acceso al mundo laboral. Posteriormente, formulamos Research Questions para profundizar en el tema. Basándonos en los datos recopilados, llevamos a cabo una encuesta a sesenta usuarios con diversos perfiles, lo que nos permitió explorar sus necesidades y crear perfiles detallados de User Personas, Mapas de Empatía, la Matriz de Necesidades y el Customer Journey.</p>
+          
+            <!--crear la galeria-->
+            <div class="galeria">
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Desk Research.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Desk Research.png" alt="Desk Research"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Research Questions.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Research Questions.png" alt="Research Questions"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Encuesta.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Encuesta.png" alt="Encuesta"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-User Persona.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-User Persona.png" alt="User persona"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Customer Journey.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Customer Journey.png" alt="Customer Journey"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Mapa de Empatía.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Mapa de Empatía.png" alt="Mapa de Empatía"></a>
+            </div>
+            
+            <div class="modal">
+                <button>&lt;</button>
+                <div class="contenedor-img">
+                    <img src="" alt="">
+                </div>
+                <button>&gt;</button>
+            </div>
+         
+            <!--fin galeria-->
+
+        <!--Bloque Idear-->
+            <h1>idear</h1>
+            <p>En la tercera etapa del proceso, utilizamos metodologías como Findings e Insights, Clustering, la Matriz de utilidad y viabilidad, y sesiones de In-Outs, para concluir las necesidades de los usuarios y definir la aplicación.</p>
+            <div class="galeria">
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-Clustering.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Clustering.png" alt="Clustering"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ-In Outs.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-In Outs.png" alt="IN In-Outs"></a>
+                <a href="../cei-proyecto-final-2024/imagenes/DQ- Matriz de utilidad y visibilidad.png"><img src="../cei-proyecto-final-2024/imagenes/DQ- Matriz de utilidad y visibilidad.png" alt="Matriz de utilidad y visibilidad"></a>
+            </div>
+
+        <!--Bloque Diseño-->
+            <h1>diseño</h1>
+            <p>En la etapa final, hemos dado vida a la aplicación gracias a los datos obtenidos durante nuestra investigación. Ha sido desarrollada con especial atención en las necesidades de nuestros usuarios, para crear una experiencia cautivadora y funcional, cuidando tanto su estética como su facilidad de uso.</p>
+        
+        <!--Bloque Wireframe-->
+            <h2>wireframe</h2>
+            <div class="galeria">
+               <a href="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 1.png"><img src="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 1.png" alt=""></a>
+               <a href="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 2.png"><img src="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 2.png" alt=""></a>
+               <a href="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 3.png"><img src="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 3.png" alt=""></a>
+               <a href="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 4.png"><img src="../cei-proyecto-final-2024/imagenes/DQ- Wireframe 4.png" alt=""></a>
+            </div>
+        
+        <!--Bloque Sistema de Diseño-->
+        <h2> sitema de diseño</h2>
+        <p>Para el diseño del logo y la selección de los colores primarios, optamos por una paleta de tonos azules. Evocando sensaciones de confianza, calma y creatividad, en nuestros usuarios. Contrastando con un tono burdeos, proporcionando un estímulo visual atractivo.</p>
+        <div class="sistemaDiseno">
+            <div class="colores">#EEEEEE</div>
+            <div class="colores">#B0B9D2</div>
+            <div class="colores">#1A2C5B</div>
+            <div class="colores">#780F48</div>
+        </div>
+        <p>Para la tipografía, hemos elegido la fuente Inter, sin serifas, para asegurar la legibilidad, aportando una apariencia moderna y clara. Para los títulos o palabras claves hemos jugado con el grosor de la tipografía, añadiendo así un elemento visual que captura la atención del lector y facilita la jerarquización de la información.</p>
+        <div class="tipografia">
+            <p>Inter</p>
+            <p>ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</p>
+        </div>
+       
+        <!--Bloque Prototipo en Alta-->
+        <h2>prototipo en alta</h2>
+        <p>Desde el siguiente enlace se puede acceder al prototipo en alta de la aplicación Design Quest</p>
+        <div class="centrarBoton">
+            <a target="_blank" href="https://www.figma.com/proto/wyIXxuvtbHRWUePB8cGdVl/Design-Thinking-%7C-Design-Quest?page-id=1%3A5&node-id=4878-671&viewport=370%2C306%2C0.12&t=7Q7lK1LBFviPnFQb-1&scaling=scale-down&starting-point-node-id=4878%3A682&show-proto-sidebar=1"><button>Prototipo en Alta</button></a>
+        </div>
+
+
+        <div class="galeria">
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 1.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 1.png" alt="DQ-Onboarding"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 2.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 2.png" alt="DQ-Onboarding"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 3.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Onboarding 3.png" alt="DQ-Onboarding"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Home.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Home.png" alt="DQ-Home"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Perfil.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Perfil.png" alt="perfil"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Reto.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Reto.png" alt="reto2"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Reto 2.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Reto 2.png" alt="reto1"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Juego 2.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Juego 2.png" alt="juego"></a>
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Juego 4.png"><img src="../cei-proyecto-final-2024/imagenes/DQ-Juego 4.png" alt="juego2"></a>  
+        </div>
+
+        <!--Bloque Versión desktop-->
+        <h2>versión desktop</h2>
+        <p>Para la versión web, desarrollamos una Landing Page diseñada para atraer nuevos clientes.</p> 
+        <div class="galeria">
+            <a href="../cei-proyecto-final-2024/imagenes/DQ-Mockup ordenador.png" alt="Versión Desktop"><img src="../cei-proyecto-final-2024/imagenes/DQ-Mockup ordenador.png" alt="DQ-Mockup"></a>
+        </div> 
+
+         <!--Bloque Accesibilidad-->
+        <h2>accesibilidad</h2>
+        <p>Tanto en la versión móvil como en la versión de escritorio, hemos implementado pautas de accesibilidad para garantizar que todos los usuarios puedan interactuar plenamente con nuestro producto.</p>
+        <div class="fin"></div> 
+    </section>
+
+     <!--Iconos redes-->
+    <div class="iconos">
+        <a target="_blank" href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a>
+        <a target="_blank" href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a>
+        <a target="_blank" href="https://www.instagram.com/madridconinma/"><i class="fab fa-instagram"></i></a>
+    </div>
+</body>
+</html>

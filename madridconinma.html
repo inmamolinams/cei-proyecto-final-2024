@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="JS/daybyday.js"></script>
+    <script defer src="JS/index.js"></script>
+    <!-- enlace para incluir iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- enlaces fuentes -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /*-------------- navegación */ 
+        h3 a{
+            text-decoration: none;
+            color:#2D3E5B;
+        }
+        /*-------------- textos | cabecera */ 
+        .textos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 70px 30px 70px;
+            gap: 70px;
+        }
+        .texto-derecha {
+            width: 50%;
+        }
+        .texto-izquierda{
+            width: 30%;
+        }
+        span{
+            text-transform: capitalize;
+            font-weight: bold;
+            color:#2D3E5B;
+        }
+        p{
+            font-size: 0.8em;
+            padding-bottom: 5px;
+        }
+        hr{
+            margin-bottom: 5px;
+        }
+        /*-------------- contenido */ 
+        .contenido{
+            padding: 0 70px 30px 70px;
+            max-width: 100%; /* La imagen no será más grande que el ancho del contenedor */
+            }
+        .contenido h1{
+            font-family: "Lato", sans-serif;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 15px 0;
+        }
+        .contenido h2{
+            color: #2D3E5B;
+            font-family: "Lato", sans-serif;
+            font-size: 0.8em;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 0 0 20px 0;
+        }
+        button {
+            border-radius: 5px;
+            color: #816A6C;
+            background: #F8F4F0;
+            border: 1px solid #816A6C;
+            font-family: "Lato", sans-serif;
+            padding: 10px 20px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            text-decoration-line: underline;
+        }
+        .centrarBoton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /*-------------- galeria */
+        .galeria{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 60px 0;
+            background-color: #F0F2E8;
+        }
+        .galeria a {
+            display: inline-block;
+        }
+        .galeria img {
+            display: block; /* Para asegurar que la imagen se muestre correctamente */
+            max-width: 100%; /* La imagen no será más ancha que su contenedor */
+            max-height: 200px; /* Aumentado el tamaño máximo de altura */
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.visible {
+            display: flex;
+        }
+        .modal button {
+            display: block;
+            -webkit-appearance: none;
+            appearance: none;
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-size: 3em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .contenedor-img {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contenedor-img img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+         /*-------------- Sistema de Diseño  NUEVOOOOO*/ 
+         .sistemaDiseno{
+            padding: 0 70px 30px 70px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .colores{
+            width: 80px;
+            height: 80px;
+            border: 1px solid transparent;
+            border-radius: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 10px 0;
+            font-family: "Lato", sans-serif;
+            font-size: 0.8em;
+        }
+        .colores:first-child{
+            color: #816A6C;
+            background-color: #F8F5F0;
+        }
+        .colores:nth-child(2){
+            color:#816A6C;
+            background-color:#E8DED9;
+        }
+        .colores:last-child{
+            color: white;
+            background-color:#816A6C;
+        }
+        
+        /*-------------- iconos */
+        .iconos{
+            padding: 0 70px 80px 70px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .iconos a{
+            color:#DB9291
+        }
+        .iconos a:hover{
+            color: #2D3E5B;
+        }
+        /*-------------- proyecto */
+        .proyecto {
+            height: auto;
+            padding: 0 70px 80px 70px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .proyecto a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .proyecto img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain; /* Esto asegura que la imagen se ajuste dentro del contenedor sin perder su proporción */
+        }
+        /*-------------- madridconinma */
+        .madridconinma {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0; /* Elimina el espacio entre las imágenes */
+        }
+        .madridconinma img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
+            border-radius: 5px; 
+        }
+     </style>
+</head>
+<body>
+    <!--navegación-->
+    <header>
+        <h3><a href="../cei-proyecto-final-2024/index.html">imms</a></h3>
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">x</button>
+            <ul>
+                <li><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></li>
+                <li><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></li>
+                <li><a href="../cei-proyecto-final-2024/contacto.html">contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr> <!--linea de separación-->
+    
+    <!--Bloque 1: presentación del proyecto-->
+    <div class="textos">
+        <div class="texto-derecha">
+            <h1>@madridconinma</h1>
+            <p>Creación de contenido | edición de foto y video.</p>
+            
+        </div>
+        <div class="texto-izquierda">
+            <p><span>roll</span>Diseñador gráfico | Gestor de RRSS</p>
+            <hr>
+            <p><span>herramientas</span>Ilustrator | Photoshop | Premier | CapCut </p>
+            <hr>
+            <p><span>habilidades</span>Foto y video | Edición de foto y vídeo | UX Design | UI Design</p>
+            <hr>
+        </div>
+    </div>
+    <!--Bloque 2: desarrollo del proyecto-->
+    <section class="contenido">
+        <!--Bloque Challenge-->
+        <h1>challenge</h1>
+        <p>¿Por qué no combinar la historia y el diseño gráfico? Así nació @madridconinma, una ventana en Instagram que nos permite narrar la fascinante historia de Madrid y diseñar contenido visualmente cautivador. En este proyecto, demostramos nuestras habilidades en diseño, fotografía y edición, fusionando nuestra pasión por la historia con nuestra destreza en el arte visual.</p>
+          
+        <!--Bloque Diseño-->
+        <h1>diseño</h1>
+        <h2>logo</h2>
+        <p>Es un dibujo de la Puerta de Alcalá, creado en Illustrator. El trazo en tonos negros resalta los detalles arquitectónicos, mientras que el césped y parte del cielo añaden vivacidad al diseño. Esta paleta de colores le otorga vida y dinamismo, capturando la esencia de la ciudad de una manera única y atractiva.</p>
+        
+        <div class="madridconinma">
+            <img src="../cei-proyecto-final-2024/imagenes/madridconinma-logo.png" alt="logo madridconinma">
+            <img src="../cei-proyecto-final-2024/imagenes/madridconinma1.png" alt="">
+            <img src="../cei-proyecto-final-2024/imagenes/madridconinma2.png" alt="">
+        </div>
+        <div class="galeria">
+            <a href="../cei-proyecto-final-2024/imagenes/madridconinma3.png"><img src="../cei-proyecto-final-2024/imagenes/madridconinma3.png" alt=""></a>
+            <a href="../cei-proyecto-final-2024/imagenes/madridconinma4.png"><img src="../cei-proyecto-final-2024/imagenes/madridconinma4.png" alt=""></a>
+            <a href="../cei-proyecto-final-2024/imagenes/madridconinma5.png"><img src="../cei-proyecto-final-2024/imagenes/madridconinma5.png" alt=""></a>
+        </div>
+        <div class="madridconinma">
+            <img src="../cei-proyecto-final-2024/imagenes/madridconinma6.png" alt="logo madridconinma">
+            <img src="../cei-proyecto-final-2024/imagenes/madridconinma7.png" alt="">
+        </div>
+        
+    </section>
+
+     <!--Iconos redes-->
+    <div class="iconos">
+        <a target="_blank" href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a>
+        <a target="_blank" href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a>
+        <a target="_blank" href="https://www.instagram.com/madridconinma/"><i class="fab fa-instagram"></i></a>
+    </div>
+</body>
+</html>
