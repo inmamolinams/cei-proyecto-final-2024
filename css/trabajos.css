@@ -136,7 +136,7 @@ h5{
         width: 50px;
     }
     .proyecto-madridconinma{
-        background-image: url(../imagenes/diseno-grafico-madridconinma/fondoIpad.png);
+        background-image: url(../imagenes/diseno-grafico-madridconinma/fondo-ipad.png);
     }
 }
 /*-------------- Responvise movil */
@@ -157,6 +157,6 @@ h5{
         padding-bottom: 2px;
     }
     .proyecto-madridconinma{
-        background-image: url(../imagenes/diseno-grafico-madridconinma/fondoMovil.png);
+        background-image: url(../imagenes/diseno-grafico-madridconinma/fondo-movil.png);
     }
 }

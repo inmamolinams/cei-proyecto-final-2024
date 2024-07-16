@@ -200,7 +200,7 @@ p {
 .imagen-uno, 
 .imagen-cuatro { 
     width: 30%;
-    background-image: url(../imagenes/fondo/fondoLimones.jpg);
+    background-image: url(../imagenes/fondo/fondo-limones.jpg);
     background-size: cover;
 }
 .imagen-uno { /*para que se vea otra parte de la imagen*/
@@ -208,12 +208,12 @@ p {
 }
 .imagen-dos {
     width: 70%;
-    background-image: url(../imagenes/fondo/fondoRayas.jpg);
+    background-image: url(../imagenes/fondo/fondo-rayas.jpg);
     background-position: top;
 }
 .imagen-tres {
     width: 70%;
-    background-image: url(../imagenes/fondo/fondoCuadrados.jpg);
+    background-image: url(../imagenes/fondo/fondo-cuadrados.jpg);
     background-position: top;
 }
 /*--------------- Categorías : UX|UI, D. Gráfico y D.Web */
