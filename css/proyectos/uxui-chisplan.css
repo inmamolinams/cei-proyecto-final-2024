@@ -1,0 +1,21 @@
+/*-------------- vinculado al CSS de Daybyday y Design Quest porque tienen el mismo formato*/ 
+
+/*-------------- Edición del botón */
+button {
+    border: 1px solid #DDE5EB;
+    color: #5880A0;
+    background-color: white; 
+}
+/*-------------- Bloque 2: desarrollo del proyecto. Sistema de Diseño */ 
+.colores:first-child{
+    color:#5880A0;
+    background-color:#F5F7FB;
+}
+.colores:nth-child(2){
+    color: #5880A0;
+    background-color:#DDE5EB;
+}
+.colores:last-child{
+    color: white;
+    background-color: #5880A0;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- enlaces css -->
+    <link rel="stylesheet" href="../css/index.css">  <!-- estilo para la navegación -->
+    <link rel="stylesheet" href="../css/proyectos/uxui-daybyday.css">  <!-- formato de la pg -->
+    <link rel="stylesheet" href="../css/proyectos/disenografico-madridconinma.css">  <!-- cambios en esta pg -->
+   <!-- enlaces js -->
+   <script defer src="../js/proyectos/uxui-daybyday.js"></script> <!-- para que funcione la galeria -->
+   <script defer src="../js/index.js"></script> <!-- para que funcione la navegación -->  
+    <!-- enlace para incluir iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- enlaces fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <!--navegación-->
+    <header>
+        <h3><a href="../index.html">imms</a></h3>
+        <!-- menu | menu bocadillo -->
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">x</button>
+            <ul>
+                <li><a href="../trabajos.html">trabajos</a></li>
+                <li><a href="../sobre-mi.html">sobre mí</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr> <!--linea de separación-->
+    <!--Bloque 1: presentación del proyecto-->
+    <div class="textos">
+        <div class="texto-derecha animar">
+            <h1>@madridconinma</h1>
+            <p>CREACIÓN DE CONTENIDO | EDICIÓN DE FOTO Y VIDEO.</p> 
+        </div>
+        <div class="texto-izquierda animar">
+            <p><span>roll</span> Diseñador gráfico | Gestor de RRSS</p>
+            <hr>
+            <p><span>herramientas</span> Ilustrator | Photoshop | Premier | CapCut </p>
+            <hr>
+            <p><span>habilidades</span> Foto y video | Edición de foto y vídeo | UX Design | UI Design</p>
+            <hr>
+        </div>
+    </div>
+    <!--Bloque 2: desarrollo del proyecto-->
+    <section class="contenido">
+        <!--Bloque Challenge-->
+        <h2 class="animar">challenge</h2>
+        <p class="animar">¿Por qué no combinar la historia y el diseño gráfico? Así nació @madridconinma, una ventana en Instagram que nos permite narrar la fascinante historia de Madrid y diseñar contenido visualmente cautivador. En este proyecto, demostramos nuestras habilidades en diseño, fotografía y edición, fusionando nuestra pasión por la historia con nuestra destreza en el arte visual.</p>
+        <!--Bloque Diseño-->
+        <h2 class="animar">diseño</h2>
+        <h4 class="animar">logo</h4>
+        <p class="animar">Es un dibujo de la Puerta de Alcalá, creado en Illustrator. El trazo en tonos negros resalta los detalles arquitectónicos, mientras que el césped y parte del cielo añaden vivacidad al diseño. Esta paleta de colores le otorga vida y dinamismo, capturando la esencia de la ciudad de una manera única y atractiva.</p>
+        <div class="madridconinma">
+            <img src="../imagenes/diseno-grafico-madridconinma/mockup-movil.png" alt="Mockup móvil">
+            <img src="../imagenes/diseno-grafico-madridconinma/mockup-imagenes-1.png" alt="Mockup imágenes 1">
+            <img src="../imagenes/diseno-grafico-madridconinma/mockup-imagenes-2.png" alt="Mockup imágenes 2">
+        </div>
+        <div class="galeria">
+            <a href="../imagenes/diseno-grafico-madridconinma/diseno-1.png"><img src="../imagenes/diseno-grafico-madridconinma/diseno-1.png" alt="Diseño 1"></a>
+            <a href="../imagenes/diseno-grafico-madridconinma/diseno-2.png"><img src="../imagenes/diseno-grafico-madridconinma/diseno-2.png" alt="Diseño 2"></a>
+            <a href="../imagenes/diseno-grafico-madridconinma/diseno-3.png"><img src="../imagenes/diseno-grafico-madridconinma/diseno-3.png" alt="Diseño 3"></a>   
+        </div>
+        <div class="madridconinma">
+            <img src="../imagenes/diseno-grafico-madridconinma/collage-instagram.png" alt="Collage Instagram">
+            <img src="../imagenes/diseno-grafico-madridconinma/tarjetas-visita.png" alt="Tarjeta visita">
+        </div>   
+        <!--botones de la galeria, para poder pasar las fotos-->
+        <div class="modal">
+            <button>&lt;</button>
+            <div class="contenedor-img">
+                <img src="" alt="">
+            </div>
+            <button>&gt;</button>
+        </div>
+    </section>
+    <!--Iconos redes-->
+    <div class="iconos">
+        <a target="_blank" href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a>
+        <a target="_blank" href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a>
+        <a target="_blank" href="https://www.instagram.com/madridconinma/"><i class="fab fa-instagram"></i></a>
+    </div>
+</body>
+</html>

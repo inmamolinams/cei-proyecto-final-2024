@@ -1,0 +1,214 @@
+/*-------------- Navegación */ 
+h3 a{
+    text-decoration: none;
+    color:#2D3E5B;
+}
+/*-------------- Bloque 1: presentación del proyecto */ 
+h1{
+    margin-bottom: 8px;
+    font-size: 1.9em; 
+}
+.textos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px 20px 70px;
+    gap: 70px;
+    font-size: 1em;
+    font-family: "Spectral", serif;
+    font-weight: 300;
+}
+.texto-izquierda p {
+    font-size: 0.85em;
+}
+.texto-derecha p{
+    padding-bottom: 10px;
+    text-align: justify;
+}
+.texto-derecha {
+    width: 55%;
+}
+.texto-izquierda{
+    width: 35%;
+}
+span{
+    text-transform: capitalize;
+    font-weight: bold;
+    color:#2D3E5B;
+}
+hr{
+    margin-bottom: 5px;
+}
+/*-------------- Bloque 2: desarrollo del proyecto */ 
+.contenido{
+    padding: 0 70px 30px 70px;
+    max-width: 100%; /* para que imagen no sea más grande que el ancho del contenedor */
+    }
+h2{
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+h4{
+    color: #2D3E5B;
+    font-family: "Lato", sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 10px 0 10px;
+}
+p{
+    text-align: justify;
+    padding-bottom: 2px;
+}
+button{
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #744227;
+    color:  #744227;
+    background: #F8F4F0;
+    font-family: "Lato", sans-serif;
+    padding: 10px 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 40px 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+button:hover{
+    text-decoration-line: underline;
+}
+.centrarBoton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*-------------- Crear la galeria */
+.galeria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px 0;
+}
+.galeria a {
+    display: inline-block;
+}
+.galeria img{
+    display: block; /* para asegurar que la imagen se muestre correctamente */
+    max-width: 100%; /* la imagen no será más ancha que su contenedor */
+    max-height: 200px; /* aumentado el tamaño máx. de altura */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.galeria img:hover{
+    transform: scale(1.1);
+}
+/*fondo la galería*/
+.modal{
+   position: fixed; /*para que tape toda la pagina*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.visible{
+    display: flex;
+}
+/*botones-flechas de la galeria*/
+.modal button{
+    display: block; /* hace que el botón sea un bloque */
+    -webkit-appearance: none; /* eliminar la apariencia predeterminada*/
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #F7F7F6;
+    font-size: 3em;
+    cursor: pointer;
+    text-decoration: none; /*para que no me salga la línea debajo*/
+}
+.contenedor-img {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+/*-------------- Bloque 3: frase final */
+span a{
+    color: #7d8ca8;
+}
+span a:hover{
+    text-decoration: underline;
+}
+.fraseFinal{
+    padding: 0 70px 30px 70px;
+    display: flex;
+    justify-content: center;
+}
+.fraseFinal p{
+    text-transform: uppercase;
+    font-weight: 500; 
+}
+/*-------------- iconos */
+.iconos{
+    padding: 0 70px 80px 70px; 
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.iconos a:hover{
+    color: #7d8ca8;
+}
+.iconos a{
+    color: #2D3E5B;
+}
+/*-------------- Responsive mv */
+@media (max-width: 800px) {
+    .texto-izquierda{
+        font-size: 0.9em;
+    }
+    h2{
+        font-size: 0.9em;
+    }
+}
+@media screen and (max-width:800px){
+    .cerrar{ /*para manterer la x del cierre del menu bocadillo*/
+        width:0;
+        margin: 0;
+    }
+    .texto-izquierda{
+        width: 48%;
+    }
+    p{
+        font-size: 0.7em;
+    }
+    .textos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .texto-derecha, .texto-izquierda{
+        width: 100%;
+    }
+}

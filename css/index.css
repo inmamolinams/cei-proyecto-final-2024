@@ -1,0 +1,572 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F7F7F6;
+}
+/*-------------- Header y navegación */ 
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 40px;
+    height: 80px; /* Altura fija para cuando se haga responsive no se mueva */
+    position: relative; /* Asegura que el contenido dentro se posicione adecuadamente */
+}
+h3{
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    color: #2D3E5B;
+    text-transform: uppercase;
+    padding-left: 15px;
+}
+/* Alinear la navegación 
+(está llamada de forma espefica porque después hay otra lista con diferentes propiedades) */
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    text-transform: capitalize;
+    list-style: none; /* quitar viñetas*/
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+ul li a{
+    color:  #2D3E5B;
+}
+header ul li a:hover{
+    color: #FFC200;
+}
+hr { /*linea negra*/
+    border: none;
+    height: 1px;
+    background-color:  #2D3E5B;
+}
+/*-------------- Navegación responsive - menu bocadillo */ 
+.abrir, .cerrar{
+    appearance: none;
+    -webkit-appearance: none; /*para segurarse que en los iphone antiguos se vea el botón*/
+    display: none; /* para que el botón no sea visible en versión desktop*/
+}
+@media screen and (max-width:800px){ /*para hacerlo versión movil*/
+    /*trasformar el nav en un botón desplegable*/ 
+    nav{
+        background-color:#ffc400;
+        position: fixed; /*romper el flujo normal y tape todo*/
+        width: calc(100% - 40px); /*ocupe todo el ancho*/
+        height: calc(100% - 40px); /*ocupe todo alto*/
+        top: -100vh; /* para esconderlo y que no se vea hasta que lo despliegen*/
+        left: 0;
+        padding: 20px; /* se separan del lateral izquierdo*/
+        transition: top 0.8s;
+        z-index: 10; /*para asegurar que no se transaparenta*/
+    } 
+    nav ul{
+        /*poner las cosas una debajo de la otra */
+        display: block; 
+    }
+    nav ul li a:hover { /*para cuando esta desplegado*/
+        color: #F7F7F6;
+        text-decoration: underline;
+    }
+    .desplegado{
+        top: 0; /* para que se vea cuando se despliege*/
+    }
+    nav li:not(:last-child){ /*para desactivar separa la nav*/
+        margin-right: 0px;
+     }
+    nav li:not(:first-child){
+        margin-top: 20px;
+    }
+    nav a{
+        font-size: 1.5em;
+        color: #F7F7F6;
+    }
+    ul li a:hover{
+        color: #FFC200;
+    }
+    .cerrar{ 
+        display: block; /*para que el botón se vea */
+        border: none;
+        background-color: transparent;
+        color: #F7F7F6;
+        font-size: 1.5em;
+        cursor: pointer;
+        position: absolute; /*para situarlo*/
+        top: 20px;
+        right: 20px;
+    }
+    .abrir{ /*forma del botón */
+        display: block;
+        background-color: transparent;
+        border: 1px solid #FFC200;
+        border-radius: 5px;
+        padding: 5px 5px 0;
+        width: 30px;
+    }
+    .abrir span{
+        display: block; /*son elementos en linea y quiero que sean cajitas*/
+        background-color: #FFC200;
+        height: 1.5px; /*grosor de las lineas */
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+ }
+/*--------------- Bloque 1: presentación */
+.presentacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px;
+}
+.tex-derecha, .tex-izquierda { /*para que ocupen el mismo espacio*/
+    width: 50%;
+}
+.tex-derecha {
+    text-transform: uppercase;
+}
+h1 {
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    color: #2D3E5B;
+    font-size: 2.5em;
+}
+.tex-derecha h2 {
+    color: #2D3E5B;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+p {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    padding-bottom: 20px;
+    color: #2D3E5B;
+}
+.contenedor-circulos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5px;
+    gap: 8px; /* Espacio entre los círculos */
+}
+.circulo {
+    height: 20px;
+    width: 80px;
+    border: 1px solid #2D3E5B;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: #2D3E5B;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.circulo:hover {
+    border: 1px solid #FFC200;
+    color: #FFC200;
+}
+/*--------------- Conjunto de imagenes decoración */
+.imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 40px;
+}
+.contenedor-uno,
+.contenedor-dos {
+    display: flex;
+    width: 95%;
+    gap: 5px;
+}
+.imagen-uno, .imagen-dos,
+.imagen-tres, .imagen-cuatro { /*darle el mismo aspecto*/
+    height: 70px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.imagen-uno, 
+.imagen-cuatro { 
+    width: 30%;
+    background-image: url(../imagenes/fondo/fondo-limones.jpg);
+    background-size: cover;
+}
+.imagen-uno { /*para que se vea otra parte de la imagen*/
+    background-position: center;
+}
+.imagen-dos {
+    width: 70%;
+    background-image: url(../imagenes/fondo/fondo-rayas.jpg);
+    background-position: top;
+}
+.imagen-tres {
+    width: 70%;
+    background-image: url(../imagenes/fondo/fondo-cuadrados.jpg);
+    background-position: top;
+}
+/*--------------- Categorías : UX|UI, D. Gráfico y D.Web */
+.categorias {
+    text-transform: capitalize;
+    padding: 60px 60px 20px;
+    color: #2D3E5B;
+}
+ul li {
+    padding: 15px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+ul a {
+    list-style: none;
+    text-decoration: none;
+}
+ul a:hover {
+    color: #FFC200;
+}
+h4 {
+    padding-bottom: 20px;
+}
+h4 i {
+    margin-right: 10px;
+}
+/*--------------- Case-study */
+.case-study {
+    text-transform: capitalize;
+    padding: 0 60px 70px;
+    color: #2D3E5B;
+}
+.case-study h4 {
+    padding-bottom: 50px;
+}
+a {
+    text-decoration: none;
+    color: inherit; /* para que herede el valor de color de su elemento padre*/
+}
+.conjunto-cuadrados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.cuadrado-uno,
+.cuadrado-dos {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.cuadrado-uno {
+    background-image: url(../imagenes/case-study-dunas/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.cuadrado-dos {
+    background-image: url(../imagenes/case-study-citilink/fondo.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.cuadrado-uno:hover,
+.cuadrado-dos:hover {
+    filter: brightness(50%);
+}
+.circulos {
+    font-size: 0.6em;
+    width: 70px;
+    border: 0.8px solid #2D3E5B;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: #2D3E5B;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+}
+/*--------------- Case-study Responsive: Solo se ve en movil */
+.contenedor-movil{
+    display: none; /* ocultar por defecto */
+}
+.contenedor-uno-mv,
+.contenedor-dos-mv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 30px ;
+}
+.contenedor-img1,
+.contenedor-img2{
+    width: 150px;
+    height: 150px;
+    background-image: url(../imagenes/case-study-dunas/fondo.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20%;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2); 
+}
+.contenedor-img2{
+    background-image: url(../imagenes/case-study-citilink/fondo.png);
+    background-size: 110%;
+}
+.textos{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    text-align: start;
+}
+.textos h4{
+    margin-top: 10px;
+    font-weight: bold; 
+}
+.textos a{
+    text-decoration: none;
+    color: #2D3E5B;
+    font-style: italic;
+    font-size: 0.7em;
+}
+/*--------------- Footer */
+footer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.footer{
+    width: 90%;
+    height: 400px;
+    background-image:url(../imagenes/fondo/fondoRayas.jpg);
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 3%;
+    flex-direction: column;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.inicio-footer, 
+.final-footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+h2{
+    color: #2D3E5B;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+}
+.boton-contacto{
+    border: 1px solid #2D3E5B;
+    background-color: transparent;
+    border-radius: 20px;
+    color: #2D3E5B;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.boton-contacto i{
+    margin-left: 10px;
+}
+.boton-contacto:hover{
+    background-color:#2D3E5B;
+    color:white;
+}
+.boton-contacto i:hover{
+    color:white;
+}
+.ultima-linea-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 70px;
+}
+h6 {
+    color: #2D3E5B;
+    font-size: 0.8em;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+}
+/*--------------- Animación: para que entre poco a poco */
+.animar {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*--------------- Responsive tablet */
+@media (max-width: 992px) {
+    h1{
+        font-size: 1.7em;
+    }
+    p, h2{
+        font-size: 0.8em;
+    }
+    .contenedor-circulos{
+        gap: 5px;
+        font-size: 1em;
+    }
+    .circulo{ 
+        height: 18px;
+        width: 70px;
+        border: 0.9px solid #2D3E5B;
+    }
+    .circulo:hover {
+        border: 0.9px solid #FFC200;
+        color:#FFC200;
+    }  
+    .imagenes {
+        padding: 0 20px;
+    }
+    .categorias, .case-study,
+    .diseño-web, .contacto {
+        padding: 40px;
+    }
+    h4{
+        font-size: 0.9em;
+    }
+    .categorias ul li{
+        font-size: 0.8em;
+    }
+    .cuadrado-uno,
+    .cuadrado-dos {
+        width: 200px;
+        height: 200px;
+    }
+    .circulos{
+        width: 50px;
+        font-size: 0.5em;
+    }
+    .footer{
+        width: 90%;
+        height: 300px;
+    }
+    .boton-contacto{
+        font-size: 0.8em;
+        width: 100px;
+        height: 25px;
+        border: 0.7px solid #2D3E5B;
+    }
+    h6{
+        font-size: 0.7em;
+    }
+}
+/*--------------- Responsive mv */
+@media (max-width: 800px) {
+    header {
+        padding: 0 40px;
+    }
+    .presentacion{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .tex-derecha,
+    .tex-izquierda {
+        width: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    /* justificar los p*/
+    .tex-izquierda p, .tex-derecha p {
+        text-align: justify;
+    }
+    .tex-izquierda{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .presentacion h1 {
+        font-size: 1.7em;
+    }
+    .contenedor-circulos{
+        gap: 5px;
+        font-size: 0.8em;
+    }
+    .circulo{
+        height: 15px;
+        width: 60px;
+        border: 0.8px solid #2D3E5B;
+    }
+    .imagenes {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    h4, .case-study h4{
+        padding-bottom: 10px;
+    }
+    .conjunto-cuadrados{
+        margin-top: 10px;
+    }
+    .cuadrado-uno,
+    .cuadrado-dos {
+        display: none;
+    }
+    .circulos{
+        width: 35px;
+        padding-bottom: 2px;
+    }
+    .categorias, .case-study,
+    .diseño-web, .contacto {
+        padding: 20px 40px;;
+    }
+    .contenedor-movil{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 20px;
+    }
+    .textos h4{
+        padding-bottom: 0; 
+    }
+    .contenedor-cuadrado {
+        width: 100px;
+        height: 100px;
+    }
+    .footer{
+        height: 200px;
+    }
+    .boton-contacto{
+        font-size: 0.7em;
+        background-color: #2D3E5B;
+        color: white;
+    }
+}
+/*--------------- ID: para que cuando nos lleve a la sección no se quede pegada al borde de la pantalla */
+#case-study {
+    padding-top: 50px;
+}

@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <!-- enlaces css -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- enlaces js -->
+    <script defer src="js/index.js"></script>
     <!-- enlace para incluir iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <!-- enlaces fuentes -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- enlaces fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     </head>
 <body>
+    <!--navegación-->
     <header>
         <h3>imms</h3>
-        <ul>
-            <li><a href="../trabajo_final/trabajos.html">trabajos</a></li>
-            <li><a href="../trabajo_final/sobre-mi.html">sobre mí</a></li>
-            <li><a href="../trabajo_final/contacto.html">contacto</a></li>
-        </ul>
+        <!-- menu | menu bocadillo -->
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">x</button>
+            <ul>
+                <li><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></li>
+                <li><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></li>
+            </ul>
+        </nav>
     </header>
     <hr> <!--linea de separación-->
-    <div class="presentacion">
+    <!--Bloque 1: presentación-->
+    <div class="presentacion animar">
         <div class="tex-derecha">
             <h1>inma molina 
                <br> martín-sacristán</h1>
@@ -33,127 +46,100 @@
         <div class="tex-izquierda">
             <p>Como profesional en UX/UI y diseño web, destaco por mi capacidad para crear experiencias visuales cautivadoras y funcionales. Mi enfoque se centra en diseñar interfaces intuitivas para mejorar significativamente la interacción del usuario, elevando así la calidad de cada proyecto digital.</p>
             <div class="contenedor-circulos">
-                <div class="circulo"><a href="#">behance</a></div>
-                <div class="circulo"><a href="#">linkedIn</a></div>
-                <div class="circulo"><a href="#">instagram</a></div>
+                <a target="_blank" class="circulo" href="https://www.behance.net/inmam1">behance</a>
+                <a target="_blank" class="circulo" href="https://www.linkedin.com/in/inmamolinams/">linkedIn</a>
+                <a target="_blank" class="circulo" href="https://www.instagram.com/madridconinma/">instagram</a>
             </div>
         </div>
     </div>
-    <div class="imagenes">
-        <div class="imagen-uno"></div>
-        <div class="contenedor-dos-tres">
+    <!--Bloque 2: conjunto de imágenes-->
+    <div class="imagenes animar">
+        <div class="contenedor-uno">
+            <div class="imagen-uno"></div>
             <div class="imagen-dos"></div>
-            <div class="imagen-tres"></div>
         </div>
-        <div class="contenedor-cuatro-cinco">
+        <div class="contenedor-dos">
+            <div class="imagen-tres"></div>
             <div class="imagen-cuatro"></div>
-            <div class="imagen-cinco"></div>
         </div>
     </div>
-    <section class="categorias">
+    <!--Bloque 3: categorías-->
+    <section class="categorias animar">
         <h4><i class="fa-solid fa-arrow-turn-down"></i>categorias</h4>
         <ul>
-            <li><a href="#">UX | UI </a></li>
+            <li><a href="trabajos.html#uxiu"> UX | UI</a></li>
+            <!--href conduce a una sección específica de la pg trabajos = UXUI -->
             <hr>
-            <li><a href="#"> diseño web</a></li>
+            <li><a href="trabajos.html#diseno-grafico"> diseño gráfico</a></li>
+            <!--href conduce a una sección específica de la pg trabajos = Diseño Gráfico -->
             <hr>
-            <li><a href="#"> diseño gráfico</a></li>
+            <li><a href="trabajos.html#diseno-web"> diseño web</a></li>
+            <!--href conduce a una sección específica de la pg trabajos = Diseño Web -->
             <hr>
         </ul>
     </section>
-    <section class="case-study">
+    <!--Bloque 4: case-study-->
+    <section class="case-study animar" id="case-study">
+        <!-- id para poder conectar los enlaces con esta sección en específico-->
         <h4><i class="fa-solid fa-arrow-turn-down"></i> case study</h4>
         <div class="conjunto-cuadrados">
-            <a href="../trabajo_final/Daybyday.html">
+            <a href="../cei-proyecto-final-2024/proyectos/case-study-dunas.html">
                 <div class="cuadrado-uno">
-                    <h5>Day by day</h5>
                     <div class="contenedor-circulos">
-                        <div class="circulo">UX | UI</div>
-                        <div class="circulo">d.thinking</div>
-                        <div class="circulo">UI Design </div>
+                        <div class="circulos">UX | UI</div>
+                        <div class="circulos">rediseño</div>
+                        <div class="circulos">a.heurístico</div>
                     </div>
                 </div>
             </a>
-            <a href="#">
-                <div class="cuadrado">
-                    <h5>análisis heurístico</h5>
+            <a href="../cei-proyecto-final-2024/proyectos/case-study-citilink.html">
+                <div class="cuadrado-dos">
                     <div class="contenedor-circulos">
-                        <div class="circulo">UX | UI</div>
-                        <div class="circulo">rediseño</div>
-                        <div class="circulo">web</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="cuadrado">
-                    <h5>análisis heurístico</h5>
-                    <div class="contenedor-circulos">
-                        <div class="circulo">UX | UI</div>
-                        <div class="circulo">rediseño</div>
-                        <div class="circulo">web</div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="cuadrado">
-                    <h5>análisis heurístico</h5>
-                    <div class="contenedor-circulos">
-                        <div class="circulo">UX | UI</div>
-                        <div class="circulo">rediseño</div>
-                        <div class="circulo">web</div>
+                        <div class="circulos">UX | UI</div>
+                        <div class="circulos">accesibilidad</div>
+                        <div class="circulos">usabilidad</div>
                     </div>
                 </div>
             </a>
         </div>
-        <div class="boton"><a href="#"> ver más <i class="fa-solid fa-arrow-right"></i></a></div>
-    </section>
-    <section class="diseño-web">
-        <h4><i class="fa-solid fa-arrow-turn-down"></i> diseño web</h4>
-        <div class="contenedor-principal">
-            <div class="contenedor">
-                <div class="contenedor-cuadrado"></div>
-                <div class="textos">
-                    <h6>octubre</h6>
-                    <h4>Daybyday</h4>
-                    <a href="#">leer más..</a>
+        <!--Solo se ve en responsive movil-->
+        <div class="contenedor-movil">
+            <a href="../cei-proyecto-final-2024/proyectos/case-study-dunas.html">
+                <div class="contenedor-uno-mv">
+                    <div class="contenedor-img1"></div>
+                    <div class="textos">
+                        <h4>análisis heurístico</h4>
+                        <a href="../cei-proyecto-final-2024/proyectos/case-study-dunas.html">Leer más..</a>
+                    </div>
                 </div>
-            </div>
-            <div class="contenedor">
-                <div class="contenedor-cuadrado"></div>
-                <div class="textos">
-                    <h6>octubre</h6>
-                    <h4>Daybyday</h4>
-                    <a href="#">leer más..</a>
+            </a>
+            <a href="../cei-proyecto-final-2024/proyectos/case-study-citilink.html">
+                <div class="contenedor-dos-mv">
+                    <div class="contenedor-img2"></div>
+                    <div class="textos">
+                        <h4>accesibilidad</h4>
+                        <a href="../cei-proyecto-final-2024/proyectos/case-study-citilink.html">Leer más..</a>
+                    </div>
                 </div>
-            </div>
-            <div class="contenedor">
-                <div class="contenedor-cuadrado"></div>
-                <div class="textos">
-                    <h6>octubre</h6>
-                    <h4>Daybyday</h4>
-                    <a href="#">leer más..</a>
-                </div>
-            </div>
-            <div class="contenedor">
-                <div class="contenedor-cuadrado"></div>
-                <div class="textos">
-                    <h6>octubre</h6>
-                    <h4>Daybyday</h4>
-                    <a href="#">leer más..</a>
-                </div>
-            </div>
+            </a>
         </div>
     </section>
+    <!--Bloque 5: footer-->
     <footer>
-        <div class="rectangulo">
-            <h2>¡Demos vida a tu próxima gran idea!</h2>
-            <div class="boton-contacto">Escríbeme <i class="fa-solid fa-arrow-right-long"></i></div>
-            <div class="ultima-linea-footer">
-                <h6><a href="#">home</a></h6>
-                <h6><a href="#">case study</a></h6>
-                <h6><a href="#">sobre mí</a></h6>
+        <div class="footer animar">
+            <div class="inicio-footer">
+                <h2>¡Demos vida a tu próxima gran idea!</h2>
+                <button class="boton-contacto"><a href="mailto:inmamolinams@gmail.com?subject=Consulta%20sobre%20tu%20portfolio">Escríbeme <i class="fa-solid fa-arrow-right-long"></i></a></button> 
             </div>
-            <h6>@2014 inmamolinams design</h6> 
+            <div class="final-footer">
+                <div class="ultima-linea-footer">
+                    <h6><a href="../cei-proyecto-final-2024/index.html">home</a></h6>
+                    <h6><a href="#case-study">case study</a></h6>
+                    <h6><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></h6>
+                    <h6><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></h6>
+                </div>
+                <h6>@2014 inmamolinams design</h6> 
+            </div>
         </div>
     </footer>
 </body>

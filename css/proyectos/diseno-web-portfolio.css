@@ -1,0 +1,12 @@
+/*-------------- vinculado al CSS de Daybyday y Lira porque tienen el mismo formato*/ 
+
+/*-------------- Para centar la frase en el contenedor */ 
+.ultima-frase{
+    display: flex;
+    justify-content: center;
+}
+/*-------------- Para modificar el span final */ 
+.final{
+    text-decoration: underline;
+    text-transform: lowercase;
+} 

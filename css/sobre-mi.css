@@ -1,0 +1,194 @@
+/*-------------- navegación */ 
+h3 a{
+    text-decoration: none;
+    color:#2D3E5B;
+}
+/*-------------- Bloque 1: presentación */ 
+.contenedor-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 70px;
+}
+.contenedor-derecha{
+    flex: 2; /* prevalece sobre el contenedor izquierdo*/
+    overflow: hidden;
+}
+.contenedor-izquierda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1; 
+}
+/*-------------- Contenedor izquierda */ 
+.imagen{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(../imagenes/sobre-mi/monigote.png);
+    background-size: cover; /* Ajustar la imagen en el contenedor */
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    }
+.boton{
+    height: 40px;
+    width: 150px;
+    border: 1px solid #2D3E5B;;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.boton:hover{
+    background-color: #2D3E5B;
+    border: 1px solid #2D3E5B;
+    color:#F7F7F6;
+}
+.iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+.circulo { 
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2D3E5B;
+    border-radius: 50%;
+    background-color: #2D3E5B;
+    color:#F7F7F6;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.circulo:hover {
+    background-color: #F7F7F6;
+    color: #2D3E5B;
+    border: 1px solid #2D3E5B;
+}
+/*-------------- Contenedor derecha */ 
+/*--- nombre y apellido */ 
+h1{
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+/*--- títulos */ 
+/*span tiene una clase porque sino afectaba al menu bocadillo*/
+ .texto {
+    text-transform: uppercase;
+    color: #7d8ca8;
+    font-family: "Spectral", serif;
+    font-weight: 500;
+    font-size: 0.8em;
+    padding-bottom: 8px;
+}
+p {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+}
+/*--- lista */ 
+ol{
+    list-style-type: decimal; /* lista numerada*/
+    margin: 10px 20px;
+    padding-bottom: 8px;
+}
+/* Estilos para los elementos de lista */
+ol li {
+    font-family: "Spectral", serif;
+    font-weight: 300;
+    color: #2D3E5B;
+}
+/*--------------- Animaciones de los 'p' */
+.contenedor-derecha p,
+.contenedor-derecha li,
+.contenedor-derecha span {
+    opacity: 0;
+    transform: translateY(50px); /* Comienza 50px abajo */
+    transition: all 0.5s ease; /* Suaviza la transición */
+}
+.contenedor-derecha p.animar,
+.contenedor-derecha li.animar,
+.contenedor-derecha span.animar {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*--------------- Responsive tablet */
+@media (max-width: 992px) {
+    /*contenedor izquierda*/
+    .imagen{
+         width: 120px;
+        height: 120px;
+    }
+    .boton{
+        height: 30px;
+        width: 90px;
+        font-size: 0.8em;
+    }
+    .iconos{
+        font-size: 0.8em;
+    }
+    .circulo{
+        width: 25px;
+        height: 25px;
+    }
+    .circulo:hover {
+        border: 0.8px solid #2D3E5B;
+    }
+    /*contenedor derecha*/
+    h1{
+        font-size: 1em;
+    }
+    p, ol li {
+        font-size: 0.8em;
+    }
+}
+/*--------------- Responsive: versión móvil */
+.contenedor-mv{
+    display: none; /* Ocultar por defecto */
+}
+@media (max-width: 800px) {
+    .contenedor-principal{
+        display: none;
+    }
+    .contenedor-mv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .imagen{
+        width: 100px;
+        height: 100px;
+    }
+    .contenedorTexto{
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: justify;
+    }
+    h1{
+        padding-bottom: 5px;
+    }
+    .boton{
+        height: 20px;
+        width: 90px;
+        font-size: 0.8em;
+        background-color: #2D3E5B;
+        color: #F7F7F6;
+    }
+    p, ol li{
+        font-size: 0.7em;
+    }
+    .iconos{
+         padding: 0 0 70px 0;
+    }
+}
