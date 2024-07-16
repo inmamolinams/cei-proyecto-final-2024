@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/estilo.css">
-    <script defer src="JS/index.js"></script>
+    <!-- enlace css -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/trabajos.css">
+    <!-- enlace js -->
+    <script defer src="js/index.js"></script>
     <!-- enlace para incluir iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
      <!-- enlaces fuentes -->
@@ -14,156 +17,6 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-     <style>
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        /*--------------- nav */
-        h3 a{
-            text-decoration: none;
-            color:#2D3E5B;
-        }
-        /*--------------- categorias */
-        .categorias a{
-            color:#7d8ca8;
-            text-transform: uppercase;
-        }
-        .categorias hr{
-            background-color:#7d8ca8;
-        }
-        .uxui{
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .proyecto,
-        .proyectoUno,
-        .proyectoDos,
-        .proyectoTres,
-        .proyectoMadridconinma,
-        .proyectoDGrafico{
-            width: 250px;
-            height: 250px;
-            overflow: hidden;
-            background-image: url(../cei-proyecto-final-2024/imagenes/daybyday.png);
-            background-position: center;
-            background-size: contain;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            padding-bottom: 25px;
-            transition: filter 0.3s ease;
-        }
-        .proyecto:hover,
-        .proyectoTres:hover,
-        .proyectoDos:hover,
-        .proyectoUno:hover,
-        .proyectoMadridconinma:hover,
-        .proyectoDGrafico:hover{
-            filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
-        }
-        .proyectoDos{
-            background-image: url(../cei-proyecto-final-2024/imagenes/DesignQuest-fondo.png);
-        }
-        .proyectoTres{
-            background-image: url(../cei-proyecto-final-2024/imagenes/Dunas.png);
-            background-size: cover;
-            background-position: center;
-        }
-        .proyecto{
-            background-image: url(../cei-proyecto-final-2024/imagenes/Chisplan-fondo.png);
-            background-size: 150%; /* aumentar la imagen */
-        }
-        .proyectoDGrafico{
-            background-image: url(../cei-proyecto-final-2024/imagenes/Lirafondo.png);
-            background-size: 140%;
-        }
-        .proyectoMadridconinma{
-            background-image: url(../cei-proyecto-final-2024/imagenes/madridconinma-fondo.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
-        h5{
-            padding-top: 0;
-            padding-bottom: 5px;
-            font-size: 0.8em;
-        }
-        .circulos{
-            font-size: 0.6em;
-            height: auto;
-            width: 50px;
-            border: 0.5px solid #627392;
-        }
-        /*-------------- iconos */
-        .iconos{
-            padding: 40px 70px 70px 70px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .iconos a:hover{
-            color: #7d8ca8;
-        }
-        .iconos a{
-            color: #2D3E5B;
-        }
-        /*-------------- Responvise tablet */
-        @media (max-width: 992px) {
-            .uxui{
-                display: flex;
-                align-content: center;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            .proyecto,
-            .proyectoUno,
-            .proyectoDos,
-            .proyectoTres,
-            .proyectoMadridconinma,
-            .proyectoDGrafico{ 
-                width: 190px;
-                height: 190px;
-            }
-            .circulos{
-                width: 50px;
-            }
-            .proyectoMadridconinma{
-                background-image: url(../cei-proyecto-final-2024/imagenes/madridconinma-fondoipad.png);
-            }
-        }
-        /*-------------- Responvise movil */
-        @media (max-width: 768px) {
-            .uxiu{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-            .proyecto,
-                .proyectoUno,
-                .proyectoDos,
-                .proyectoTres,
-                .proyectoMadridconinma,
-                .proyectoDGrafico{ 
-                    width: 150px;
-                    height: 150px;
-            }
-            .circulos{
-                width: 39px;
-                padding-bottom: 2px;
-            }
-            .proyectoMadridconinma{
-                background-image: url(../cei-proyecto-final-2024/imagenes/madridconinma-fondomv.png);
-            }
-        }
-     </style>
 </head>
 <body>
     <!--navegación-->
@@ -179,20 +32,18 @@
             <ul>
                 <li><a href="../cei-proyecto-final-2024/trabajos.html">trabajos</a></li>
                 <li><a href="../cei-proyecto-final-2024/sobre-mi.html">sobre mí</a></li>
-                <li><a href="../cei-proyecto-final-2024/contacto.html">contacto</a></li>
             </ul>
         </nav>
     </header>
     <hr> <!--linea de separación-->
-
     <!--Bloque 1: categoría UX|UI-->
-    <section class="categorias">
+    <section class="categorias animar" id="uxui">
+         <!--he añadido un id para poder conectarlo con el bloque 3 del index (bloque 3: categorías) y cuando seleccionen el apartado de UXIU les traiga hasta este apartado contreto-->
         <a href="#">ux | ui </a>
         <hr>
         <div class="uxui">
-            <a href="../cei-proyecto-final-2024/Daybyday.html">
-                <div class="proyectoUno">
-                    <!-- <h5>Day by day</h5> -->
+            <a href="../cei-proyecto-final-2024/proyectos/uxui-daybyday.html">
+                <div class="proyecto-daybyday">
                     <div class="contenedor-circulos">
                         <div class="circulos">UX | UI</div>
                         <div class="circulos">d.thinking</div>
@@ -200,9 +51,8 @@
                     </div>
                 </div >
             </a>
-            <a href="../cei-proyecto-final-2024/design-quest.html">
-                <div class="proyectoDos">
-                   <!-- <h5>Design Quest</h5>-->
+            <a href="../cei-proyecto-final-2024/proyectos/uxui-design-quest.html">
+                <div class="proyecto-design-quest">
                     <div class="contenedor-circulos">
                         <div class="circulos">UX | UI</div>
                         <div class="circulos">d.thinking</div>
@@ -210,10 +60,8 @@
                     </div>
                 </div>
             </a>
-            
-            <a href="../cei-proyecto-final-2024/chisplan.html">
-                <div class="proyecto">
-                    <!-- <h5>chisplan</h5>-->
+            <a href="../cei-proyecto-final-2024/proyectos/uxui-chisplan.html">
+                <div class="proyecto-chisplan">
                     <div class="contenedor-circulos">
                         <div class="circulos">UX | UI</div>
                         <div class="circulos">d.sprint</div>
@@ -222,15 +70,13 @@
                 </div>
             </a>
     </section>
-
-      <!--Bloque 2: categoría Diseño gráfico-->
-      <section class="categorias">
+    <!--Bloque 2: categoría Diseño gráfico-->
+    <section class="categorias animar"  id="diseno-grafico">
         <a href="#">Diseño gráfico y @madridconinma </a>
         <hr>
-        <div class="uxui">
-            <a href="../cei-proyecto-final-2024/liria.html">
-                <div class="proyectoDGrafico">
-                    <!-- <h5>Liria</h5> -->
+        <div class="diseno-grafico">
+            <a href="../cei-proyecto-final-2024/proyectos/disenografico-lira.html">
+                <div class="proyecto-lira">
                     <div class="contenedor-circulos">
                         <div class="circulos">D. gráfico</div>
                         <div class="circulos">Branding</div>
@@ -238,8 +84,8 @@
                     </div>
                 </div >
             </a>
-            <a href="../cei-proyecto-final-2024/madridconinma.html">
-                <div class="proyectoMadridconinma">
+            <a href="../cei-proyecto-final-2024/proyectos/disenografico-madridconinma.html">
+                <div class="proyecto-madridconinma">
                     <div class="contenedor-circulos">
                         <div class="circulos">D. gráfico</div>
                         <div class="circulos">instagram</div>
@@ -248,36 +94,23 @@
                 </div>
             </a>
     </section>
-
-     <!--Bloque 3: categoría Diseño web-->
-    <section class="categorias">
+    <!--Bloque 3: categoría Diseño web-->
+    <section class="categorias animar" id="diseno-web">
         <a href="#">Diseño Web </a>
         <hr>
-        <div class="uxui">
-            <a href="../cei-proyecto-final-2024/Daybyday.html">
-                <div class="proyectoUno">
-                    <h5>Day by day</h5>
+        <div class="diseno-web">
+            <a href="../cei-proyecto-final-2024/proyectos/diseno-web-portfolio.html">
+                <div class="proyecto-portfolio">
                     <div class="contenedor-circulos">
-                        <div class="circulos">UX | UI</div>
-                        <div class="circulos">d.thinking</div>
+                        <div class="circulos"> d. web</div>
+                        <div class="circulos"> HTML </div>
                         <div class="circulos">UI Design </div>
                     </div>
                 </div >
             </a>
-            <a href="../cei-proyecto-final-2024/chisplan.html">
-                <div class="proyectoDos">
-                    <h5>Design Quest</h5>
-                    <div class="contenedor-circulos">
-                        <div class="circulos">UX | UI</div>
-                        <div class="circulos">rediseño</div>
-                        <div class="circulos">web</div>
-                    </div>
-                </div>
-            </a>
     </section>
-
     <!--Iconos redes-->
-    <div class="iconos">
+    <div class="iconos animar">
         <a target="_blank" href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a>
         <a target="_blank" href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a>
         <a target="_blank" href="https://www.instagram.com/madridconinma/"><i class="fab fa-instagram"></i></a>

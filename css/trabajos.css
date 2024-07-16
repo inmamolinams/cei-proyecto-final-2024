@@ -1,0 +1,162 @@
+/*--------------- Navegación */
+h3 a{
+    text-decoration: none;
+    color:#2D3E5B;
+}
+/*--------------- Bloque 1: Categoria UX|UI */
+.categorias a{
+    color:#7d8ca8;
+    text-transform: uppercase; 
+}
+.categorias hr{
+    background-color:#7d8ca8;
+}
+.uxui, .diseno-grafico,
+.diseno-web{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.proyecto-daybyday, .proyecto-design-quest,.proyecto-chisplan{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background-image: url(../imagenes/uxui-daybyday/fondo.png);
+    background-position: center;
+    background-size: contain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    transition: filter 0.3s ease;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.proyecto-daybyday:hover, .proyecto-design-quest:hover, .proyecto-chisplan:hover{
+    filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
+}
+.proyecto-design-quest{
+    background-image: url(../imagenes/uxui-design-quest/fondo.png);
+}
+.proyecto-chisplan{
+    background-image: url(../imagenes/uxui-chisplan/fondo.png);
+    background-size: 150%; /* aumentar la imagen */
+}
+h5{
+    padding-top: 0;
+    padding-bottom: 5px;
+    font-size: 0.8em;
+}
+.circulos{
+    font-size: 0.6em;
+    height: auto;
+    width: 50px;
+    border: 0.5px solid #627392;
+}
+/*--------------- Bloque 2: Categoria Diseño gráfico */
+/* tiene las mismas características que los proyectos anteriores pero quería separalos por bloques*/
+.proyecto-lira, .proyecto-madridconinma {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background-image: url(../imagenes/diseno-grafico-lira/fondo.png);
+    background-position: center;
+    background-size: contain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    transition: filter 0.3s ease;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.proyecto-lira:hover, .proyecto-madridconinma:hover {
+    filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
+}
+.proyecto-lira {
+    background-size: 140%; /* ajustar la imagen*/
+}
+.proyecto-madridconinma {
+    background-image: url(../imagenes/diseno-grafico-madridconinma/fondo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*--------------- Bloque 3: Categoria Diseño Web */
+.proyecto-portfolio{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background-image: url(../imagenes/diseno-web/fondo.png);
+    background-position: center;
+    background-size: contain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    transition: filter 0.3s ease;
+    box-shadow: 0 0.5px 0.5px rgba(0,0,0,0.2);
+}
+.proyecto-portfolio:hover{
+    filter: brightness(50%); /* Oscurece el cuadro al pasar el ratón */
+}
+/*-------------- iconos */
+.iconos{
+    padding: 40px 70px 70px 70px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.iconos a:hover{
+    color: #7d8ca8;
+}
+.iconos a{
+    color: #2D3E5B;
+}
+/*-------------- Responvise tablet */
+@media (max-width: 992px) {
+    .uxui{
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .proyecto-daybyday, .proyecto-design-quest, .proyecto-chisplan,
+    .proyecto-lira, .proyecto-madridconinma, .proyecto-portfolio { 
+        width: 190px;
+        height: 190px;
+    }
+    .circulos{
+        width: 50px;
+    }
+    .proyecto-madridconinma{
+        background-image: url(../imagenes/diseno-grafico-madridconinma/fondoIpad.png);
+    }
+}
+/*-------------- Responvise movil */
+@media (max-width: 800px) {
+    .uxiu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .proyecto-daybyday, .proyecto-design-quest, .proyecto-chisplan,
+    .proyecto-lira, .proyecto-madridconinma, .proyecto-portfolio{ 
+        width: 150px;
+        height: 150px;
+    }
+    .circulos{
+        width: 39px;
+        padding-bottom: 2px;
+    }
+    .proyecto-madridconinma{
+        background-image: url(../imagenes/diseno-grafico-madridconinma/fondoMovil.png);
+    }
+}

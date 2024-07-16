@@ -1,0 +1,42 @@
+/*-------------- vinculado al CSS de Daybyday y Design Quest porque tienen el mismo formato*/ 
+
+/*-------------- Bloque Rediseño: Sistema de Diseño */ 
+.colores:first-child{
+    color: #816A6C;
+    background-color: #F8F5F0;
+}
+.colores:nth-child(2){
+    color:#816A6C;
+    background-color:#E8DED9;
+}
+.colores:last-child{
+    color: white;
+    background-color:#816A6C;
+}
+/*-------------- Bloque Prototipo en Alta: proyecto */
+button {
+    color: #816A6C;
+    background: #F8F4F0;
+    border: 1px solid #816A6C;
+}
+.proyecto {
+    height: auto;
+    padding: 0 70px 80px 70px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.proyecto a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.proyecto img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: contain; /* ajustar la imagen dentro del contenedor sin perder su proporción */
+}

@@ -1,0 +1,36 @@
+/*-------------- vinculado al CSS de Daybyday porque tienen el mismo formato*/ 
+/*-------------- Bloque 2: desarrollo del proyecto */
+.contenido h2{
+    padding: 10px 0 5px;
+}
+.contenido h4{
+    padding: 5px 0;
+}
+.galeria{
+    padding: 60px 0;
+    background-color: #F0F2E8;
+    margin: 0;
+}
+.galeria a{
+    display: inline-block;
+} 
+p{
+    margin-bottom: 10px;
+}
+.contenido p:last-of-type{
+    margin-bottom: 20px;
+}
+/*-------------- ajustar imagenes (bloque diseño) */
+.madridconinma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0; /* Elimina el espacio entre las imágenes */
+}
+.madridconinma img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
+    border-radius: 5px; 
+}

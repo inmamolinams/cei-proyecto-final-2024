@@ -1,4 +1,4 @@
-// menu desplegable
+// menu desplegable - menu bocadillo
 
 const botones = document.querySelectorAll(".abrir,.cerrar");
 const navegacion = document.querySelector("nav");
