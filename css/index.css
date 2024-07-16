@@ -356,7 +356,7 @@ footer{
 .footer{
     width: 90%;
     height: 400px;
-    background-image:url(../imagenes/fondo/fondoRayas.jpg);
+    background-image:url(../imagenes/fondo/fondo-rayas.jpg);
     display: flex;
     justify-content: space-evenly;
     border-radius: 3%;
