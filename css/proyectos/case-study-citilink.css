@@ -1,4 +1,8 @@
-/*-------------- vinculado al CSS de Daybyday porque tienen el mismo formato*/ 
+/*-------------- vinculado al CSS de Daybyday porque tienen el mismo formato*/
+ 
+.contenido p{
+    margin-bottom: 20px;
+}
 /*--------------Bloque 2:desarrollo del proyecto*/
 .citiLink {
     display: flex;

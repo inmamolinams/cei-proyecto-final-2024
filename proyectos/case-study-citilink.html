@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IMMS Design</title>
     <!-- enlaces css -->
     <link rel="stylesheet" href="../css/index.css"> <!-- estilo para la navegación -->
     <link rel="stylesheet" href="../css/proyectos/uxui-daybyday.css"> <!-- formato de la pg -->
     <link rel="stylesheet" href="../css/proyectos/case-study-citilink.css"> <!-- cambios en esta pg -->
     <!-- enlaces js -->
-    <script defer src="../js/proyectos/uxui-daybyday.js"></script> <!-- para que funcione la galeria -->
     <script defer src="../js/index.js"></script> <!-- para que funcione la navegación -->
     <!-- enlace para incluir iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,8 +17,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">  
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+    <!-- enlaces icon -->
+    <link rel="icon" href="../favicon/monigote.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon/monigote.ico" type="image/x-icon"> <!-- para Explorer-->
+    <!-- para que se adapte a todas las pantallas -->
+    <link rel="icon" href="../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../favicon/favicon-48x48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="../favicon/favicon.svg" type="image/svg+xml"> <!--alta resolución-->
 <body>
     <!--navegación-->
     <header>
@@ -33,7 +39,7 @@
         <nav>
             <button class="cerrar">x</button>
             <ul>
-                <li><a href="../trabajos.html">trabajos</a></li>
+                <li><a href="../pg-proyectos.html">proyectos</a></li>
                 <li><a href="../sobre-mi.html">sobre mí</a></li>
             </ul>
         </nav>
@@ -44,7 +50,6 @@
         <div class="texto-derecha animar">
             <h1>Citylink</h1>
             <p>Análisis de Accesisibilidad</p>
-            
         </div>
         <div class="texto-izquierda animar">
             <p><span>roll</span> UXUI | Proyecto de Accesisibilidad</p>
@@ -58,30 +63,29 @@
     <!--Bloque 2: desarrollo del proyecto-->
     <section class="contenido">
         <!--Bloque Challenge-->
-        <h2>challenge</h2>
-        <p>Identificar y resolver problemas de accesibilidad en la página de CitiLink, asegurando que todos los usuarios, independientemente de sus capacidades, puedan navegar y utilizar el sitio web de manera efectiva.</p> 
+        <h2 class="animar">challenge</h2>
+        <p class="animar">Identificar y resolver problemas de accesibilidad en la página de CitiLink, asegurando que todos los usuarios, independientemente de sus capacidades, puedan navegar y utilizar el sitio web de manera efectiva.</p> 
         <!--Bloque proyecto-->
-        <div class="citiLink">
-            <img src="../imagenes/case-study-citilink/portada.png" alt="portada">
-            <img src="../imagenes/case-study-citilink/visual-1.png" alt="Accesibilidad visual 1">
-            <img src="../imagenes/case-study-citilink/visual-2.png" alt="Accesibilidad visual 2">
-            <img src="../imagenes/case-study-citilink/visual-3.png" alt="Accesibilidad visual 3">
-            <img src="../imagenes/case-study-citilink/cognitiva-1.png" alt="Accesibilidad cognitiva 1">
-            <img src="../imagenes/case-study-citilink/cognitiva-2.png" alt="Accesibilidad cognitiva 2">
-            <img src="../imagenes/case-study-citilink/motora-1.png" alt="Accesibilidad motora 1">
-            <img src="../imagenes/case-study-citilink/motora-2.png" alt="Accesibilidad motora 2">
-            <img src="../imagenes/case-study-citilink/motora-3.png" alt="Accesibilidad motora 3">
-            <img src="../imagenes/case-study-citilink/motora-4.png" alt="Accesibilidad motora 4">
-            <img src="../imagenes/case-study-citilink/auditiva-1.png" alt="Accesibilidad auditiva 1">
-            <img src="../imagenes/case-study-citilink/auditiva-2.png" alt="Accesibilidad auditiva 2">
+        <div class="citiLink animar">
+            <img src="../imagenes/case-study-citilink/portada.png" alt="portada" loading="lazy">
+            <img src="../imagenes/case-study-citilink/visual-1.png" alt="Accesibilidad visual 1" loading="lazy">
+            <img src="../imagenes/case-study-citilink/visual-2.png" alt="Accesibilidad visual 2" loading="lazy">
+            <img src="../imagenes/case-study-citilink/visual-3.png" alt="Accesibilidad visual 3" loading="lazy">
+            <img src="../imagenes/case-study-citilink/cognitiva-1.png" alt="Accesibilidad cognitiva 1" loading="lazy">
+            <img src="../imagenes/case-study-citilink/cognitiva-2.png" alt="Accesibilidad cognitiva 2" loading="lazy">
+            <img src="../imagenes/case-study-citilink/motora-1.png" alt="Accesibilidad motora 1" loading="lazy">
+            <img src="../imagenes/case-study-citilink/motora-2.png" alt="Accesibilidad motora 2" loading="lazy">
+            <img src="../imagenes/case-study-citilink/motora-3.png" alt="Accesibilidad motora 3" loading="lazy">
+            <img src="../imagenes/case-study-citilink/motora-4.png" alt="Accesibilidad motora 4" loading="lazy">
+            <img src="../imagenes/case-study-citilink/auditiva-1.png" alt="Accesibilidad auditiva 1" loading="lazy">
+            <img src="../imagenes/case-study-citilink/auditiva-2.png" alt="Accesibilidad auditiva 2" loading="lazy">
         </div>        
     </section>
     <!--Iconos redes-->
-    <div class="iconos">
+    <div class="iconos animar">
         <a target="_blank" href="https://www.linkedin.com/in/inmamolinams/"><i class="fab fa-linkedin-in"></i></a>
         <a target="_blank" href="https://www.behance.net/inmam1"><i class="fab fa-behance"></i></a>
         <a target="_blank" href="https://www.instagram.com/madridconinma/"><i class="fab fa-instagram"></i></a>
     </div>
 </body>
-</html>
 </html>

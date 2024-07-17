@@ -6,7 +6,7 @@
     background-color: #F8F5F0;
 }
 .colores:nth-child(2){
-    color:#816A6C;
+    color:#816A6C; 
     background-color:#E8DED9;
 }
 .colores:last-child{
@@ -14,7 +14,7 @@
     background-color:#816A6C;
 }
 /*-------------- Bloque Prototipo en Alta: proyecto */
-button {
+.boton{
     color: #816A6C;
     background: #F8F4F0;
     border: 1px solid #816A6C;
@@ -36,7 +36,17 @@ button {
     height: 100%;
 }
 .proyecto img {
-    max-width: 60%;
-    max-height: 60%;
-    object-fit: contain; /* ajustar la imagen dentro del contenedor sin perder su proporción */
+    width: 100%; 
+    height: auto; /* mantener la proporción de la imagen */
+    max-width: none; 
+    max-height: none; 
+}
+/*-------------- Responsive mv */
+@media (max-width: 800px) {
+    .proyecto {
+        padding: 0 20px 40px 20px; /* Reducir el padding para pantallas más pequeñas */
+    }
+    .proyecto img {
+        width: 100%; /* Asegurar que la imagen ocupa todo el ancho disponible en dispositivos móviles */
+    }
 }

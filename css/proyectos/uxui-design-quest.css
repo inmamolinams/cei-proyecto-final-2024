@@ -1,7 +1,7 @@
 /*-------------- vinculado al CSS de Daybyday porque tienen el mismo formato*/ 
 
 /*-------------- Edición botón */ 
-button {
+.boton {
     border: 1px solid #C7D0ED;
     color: #273e79;
     background-color: white; 
@@ -60,10 +60,19 @@ button {
     margin-top: 20px;
 }
 /*-------------- Responsive mv: tipografía*/
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .tipografia{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .colores{
+        width: 60px;
+        height: 60px;
+        border: 0.8px solid transparent;
+        font-size: 0.4em;
+    }
+    .sistemaDiseno{
+        gap: 5px;
     }
 }

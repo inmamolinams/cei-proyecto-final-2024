@@ -220,7 +220,7 @@ p {
 .categorias {
     text-transform: capitalize;
     padding: 60px 60px 20px;
-    color: #2D3E5B;
+    color: #2D3E5B; 
 }
 ul li {
     padding: 15px;

@@ -63,7 +63,7 @@ p{
     text-align: justify;
     padding-bottom: 2px;
 }
-button{
+.boton{
     width: 150px;
     height: 25px;
     border-radius: 5px;
@@ -80,7 +80,7 @@ button{
     justify-content: center; 
     align-items: center;
 }
-button:hover{
+.boton:hover{
     text-decoration-line: underline;
 }
 .centrarBoton{
@@ -121,6 +121,7 @@ button:hover{
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 99; /* para asegurar que esta sobre todo */
 }
 .visible{
     display: flex;
