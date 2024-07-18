@@ -23,7 +23,7 @@ h3 a{
 }
 /*-------------- Contenedor izquierda */ 
 .imagen{
-    width: 200px;
+    width: 200px; 
     height: 200px;
     border-radius: 50%;
     background-image: url(../imagenes/sobre-mi/monigote.png);
@@ -103,6 +103,7 @@ ol li {
     font-family: "Spectral", serif;
     font-weight: 300;
     color: #2D3E5B;
+    text-align: left;
 }
 /*--------------- Animaciones de los 'p' */
 .contenedor-derecha p,
@@ -179,10 +180,10 @@ ol li {
         padding-bottom: 5px;
     }
     .boton{
-        height: 20px;
-        width: 90px;
+        height: 25px;
+        width: 95px;
         font-size: 0.8em;
-        background-color: #2D3E5B;
+        background-color:  #2D3E5B;
         color: #F7F7F6;
     }
     p, ol li{

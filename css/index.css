@@ -40,7 +40,7 @@ ul li a{
     color:  #2D3E5B;
 }
 header ul li a:hover{
-    color: #FFC200;
+    color:#FFC200;
 }
 hr { /*linea negra*/
     border: none;
@@ -56,12 +56,12 @@ hr { /*linea negra*/
 @media screen and (max-width:800px){ /*para hacerlo versión movil*/
     /*trasformar el nav en un botón desplegable*/ 
     nav{
-        background-color:#ffc400;
+        background-color:#7d8ca8;
         position: fixed; /*romper el flujo normal y tape todo*/
         width: calc(100% - 40px); /*ocupe todo el ancho*/
         height: calc(100% - 40px); /*ocupe todo alto*/
         top: -100vh; /* para esconderlo y que no se vea hasta que lo despliegen*/
-        left: 0;
+        right: 0; /* Alineación a la derecha */
         padding: 20px; /* se separan del lateral izquierdo*/
         transition: top 0.8s;
         z-index: 10; /*para asegurar que no se transaparenta*/
@@ -70,9 +70,13 @@ hr { /*linea negra*/
         /*poner las cosas una debajo de la otra */
         display: block; 
     }
+    nav ul li a {
+        font-size: 1.5em;
+        color: #f7f7f6; /* Color del texto */
+    }
     nav ul li a:hover { /*para cuando esta desplegado*/
-        color: #F7F7F6;
         text-decoration: underline;
+        color: #F7F7F6;
     }
     .desplegado{
         top: 0; /* para que se vea cuando se despliege*/
@@ -83,12 +87,8 @@ hr { /*linea negra*/
     nav li:not(:first-child){
         margin-top: 20px;
     }
-    nav a{
-        font-size: 1.5em;
-        color: #F7F7F6;
-    }
     ul li a:hover{
-        color: #FFC200;
+        color: #7d8ca8;
     }
     .cerrar{ 
         display: block; /*para que el botón se vea */
@@ -104,14 +104,14 @@ hr { /*linea negra*/
     .abrir{ /*forma del botón */
         display: block;
         background-color: transparent;
-        border: 1px solid #FFC200;
+        border: 1px solid #7d8ca8;
         border-radius: 5px;
         padding: 5px 5px 0;
         width: 30px;
     }
     .abrir span{
         display: block; /*son elementos en linea y quiero que sean cajitas*/
-        background-color: #FFC200;
+        background-color: #7d8ca8;
         height: 1.5px; /*grosor de las lineas */
         margin-bottom: 5px;
         cursor: pointer;
@@ -560,9 +560,16 @@ h6 {
     .footer{
         height: 200px;
     }
+    .inicio-footer{
+        padding-top: 20px;
+    }
+    .final-footer{
+        padding-bottom: 10px;
+    }
     .boton-contacto{
         font-size: 0.7em;
-        background-color: #2D3E5B;
+        background-color: #3d4e6c;
+        border: 0.8px solid transparent;
         color: white;
     }
 }
